@@ -2,6 +2,8 @@
 import { css } from "@emotion/react"
 import { Tabs } from "./Tabs"
 import { BetInput } from "./BetInput"
+import { MinesInput } from "./MinesInput"
+import { BetButton } from "./BetButton"
 
 const tabs = ({
     wrap:css({
@@ -16,6 +18,8 @@ export const LeftWrap = () =>{
         <div css={tabs.wrap}>
             <Tabs />
             <BetInput />
+            <MinesInput />
+            <BetButton />
         </div>
     )
 }
