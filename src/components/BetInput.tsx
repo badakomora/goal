@@ -6,11 +6,11 @@ export const BetInput = () => {
         betinput:css({
             width:"100%",
             height:"35px",
+            background: "#2f4553",
         }),
         wrap:css({
             display:"flex",
             height:"100%",
-            background: "#2f4553",
         }),
         inputwrap:css({ 
             display:"flex",
@@ -22,7 +22,6 @@ export const BetInput = () => {
             display:"flex",
             width:"30%",
             height:"100%",
-            background:"green"
         }),
         input:css({
             width:"80%",

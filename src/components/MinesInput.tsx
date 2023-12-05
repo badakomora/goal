@@ -16,8 +16,7 @@ export const MinesInput = () =>{
     return(
         <div css={minesinput.minesinput}>
                 <select css={minesinput.input} >
-                    <option value="">1</option>
-                    <option value="">2</option>
+                    <option value=""></option>
                 </select>
         </div>
     )
