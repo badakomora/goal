@@ -5,7 +5,7 @@ export const BetButton = () => {
         betbutton:css({
             width:"100%",
             height:"45px",
-            marginTop:"10px",
+            marginTop:"30px",
         }),
         button:css({
             width:"100%",

@@ -14,10 +14,16 @@ export const MinesInput = () =>{
             height:"100%",
             background:"#0f212e",
             border:"#2f4553 2px solid",
+        }),
+        label:css({
+            color:"white",
+            fontFamily:"Sans-serif",
+            fontSize:"13px",
         })
     })
     return(
         <div css={minesinput.minesinput}>
+            <span css={minesinput.label}>Mines</span>
                 <select css={minesinput.input} >
                     <option value=""></option>
                 </select>

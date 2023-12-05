@@ -8,7 +8,7 @@ export const BetInput = () => {
             height:"35px",
             background: "#2f4553",
             border:"#2f4553 2px solid",
-             marginTop:"10px",
+            display:"block"
         }),
         wrap:css({
             display:"flex",
@@ -17,6 +17,13 @@ export const BetInput = () => {
             width:"100%",
             // background:"white",
             background:"#0f212e"
+        }),
+        amountlabel:css({
+            display:"flex",
+            justifyContent:"space-between",
+            fontFamily:"Sans-serif",
+            fontSize:"13px",
+            color:"white"
         }),
         inputwrap:css({ 
             display:"flex",
@@ -65,23 +72,30 @@ export const BetInput = () => {
             color:"white",
             border:"none",
             fontFamily:"Sans-serif",
+        }),
+        container:css({
+            display:"block",
+            marginTop:"10px"
         })
     })
     return(
-        <div css={betinput.betinput}>
-            {/* <div className="amountlabel">
-                
-            </div> */}
-            <div css={betinput.wrap}>
-                <div css={betinput.inputwrap}>
-                    <input css={betinput.input} type="number" />
-                    <div css={betinput.iconwrap}>
-                        <span css={betinput.icon}>KES</span>
+        <div css={betinput.container}>
+            <div css={betinput.amountlabel}>
+                <span>Bet Amount</span>
+                <span>KES0.00</span>
+            </div>
+            <div css={betinput.betinput}>
+                <div css={betinput.wrap}>
+                    <div css={betinput.inputwrap}>
+                        <input css={betinput.input} type="number" />
+                        <div css={betinput.iconwrap}>
+                            <span css={betinput.icon}>KES</span>
+                        </div>
                     </div>
-                </div>
-                <div css={betinput.buttonswrap}>
-                    <button css={betinput.amounthalf}>&frac12;</button>
-                    <button css={betinput.amountdouble}>2x</button>
+                    <div css={betinput.buttonswrap}>
+                        <button css={betinput.amounthalf}>&frac12;</button>
+                        <button css={betinput.amountdouble}>2x</button>
+                    </div>
                 </div>
             </div>
         </div>
