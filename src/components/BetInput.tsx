@@ -11,7 +11,7 @@ export const BetInput = () => {
             height:"35px",
             background: "#2f4553",
         }),
-        inputwrap:css({
+        inputwrap:css({ 
             display:"flex",
             width:"70%",
             height:"90%",
