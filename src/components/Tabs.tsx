@@ -5,32 +5,35 @@ export const Tabs = () =>{
         tabs:css({
             height:"10%",
             width:"100%",
+            marginTop:"10px",
         }),
         wrap:css({
             background:"#0f212e",
             width:"100%",
-            height:"45px",
+            height:"50px",
             display: "flex",
             justifyContent:"center",
             borderRadius:" 3rem",
             
         }),
         manualTab: css({
-            width: "47%",
+            width: "46%",
             height:"40px",
             background: "#2f4553",
             borderRadius: "4.5rem",
             border:"none",
             margin:"auto",
-            color:"white"
+            color:"white",
+            fontFamily:"Sans-serif",
         }),
         autoTab: css({
-            width: "50%",
+            width: "46%",
             borderRadius: "4.5rem",
             background:"transparent",
             border:"none",
             margin:"auto",
             color:"white",
+            fontFamily:"Sans-serif",
         }),
     })
     return(
