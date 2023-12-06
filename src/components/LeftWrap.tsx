@@ -11,15 +11,26 @@ const tabs = ({
         width:"95%",
         margin:"auto",
         display:"block"
+    }),
+    manualTab:css({
+        display:"block"
+    }),
+    autoTab:css({
+        display:"none"
     })
 })
 export const LeftWrap = () =>{
     return(
         <div css={tabs.wrap}>
-            <Tabs />
-            <BetInput />
-            <MinesInput />
-            <BetButton />
+            <div css={tabs.manualTab}>
+                <Tabs />
+                <BetInput />
+                <MinesInput />
+                <BetButton />
+            </div>
+            <div className="autoTab">
+                bada
+            </div>
         </div>
     )
 }

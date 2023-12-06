@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
+import { useState } from "react"
 export const Tabs = () =>{
     const tabs = ({
         tabs:css({
@@ -24,6 +25,7 @@ export const Tabs = () =>{
             border:"none",
             margin:"auto",
             color:"white",
+            fontSize:"12px",
             fontFamily:"Sans-serif",
         }),
         autoTab: css({
@@ -33,14 +35,32 @@ export const Tabs = () =>{
             border:"none",
             margin:"auto",
             color:"white",
+            fontSize:"12px",
             fontFamily:"Sans-serif",
+            "&:hover": {
+                backgroundColor: "#2f4553",
+                width: "46%",
+                height:"80%",
+                borderRadius: "4.5rem",
+                border:"none",
+                margin:"auto",
+                color:"white",
+                fontSize:"12px",
+                fontFamily:"Sans-serif",
+              },
         }),
     })
+
+    const [toggleTabClass, setToggleTabClass] = useState(1) 
+
+    const toggleTabs = (index: number) =>{
+        setToggleTabClass(index)
+    }
     return(
         <div css={tabs.tabs}>
             <div css={tabs.wrap}>
-                <button css={tabs.manualTab}>Manual</button>
-                <button css={tabs.autoTab}>Auto</button>
+                <button css={toggleTabClass === 1 ? tabs.manualTab : tabs.autoTab} onClick={() => toggleTabs(1)}>Manual</button>
+                <button css={toggleTabClass === 2 ? tabs.manualTab : tabs.autoTab} onClick={() => toggleTabs(2)}>Auto</button>
             </div>
         </div>
     )
