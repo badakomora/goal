@@ -12,7 +12,10 @@ export const BetButton = () => {
             height:"100%",
             backgroundColor:"#00e701",
             borderRadius:"5px",
-            border:"none"
+            border:"none",
+            "&:hover": {
+                backgroundColor: "#1fff20",
+              },
         })
     })
     return(

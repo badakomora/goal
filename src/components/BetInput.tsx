@@ -22,7 +22,7 @@ export const BetInput = () => {
             display:"flex",
             justifyContent:"space-between",
             fontFamily:"Sans-serif",
-            fontSize:"13px",
+            fontSize:"12px",
             color:"white"
         }),
         inputwrap:css({ 

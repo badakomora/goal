@@ -19,7 +19,7 @@ const gameStyle = {
     }),
     leftWrap:css({
         backgroundColor:"#213743",
-        width:"35%",
+        width:"33%",
         display:"flex",
         justifyContent:"center"
     }),
