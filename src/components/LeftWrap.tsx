@@ -4,7 +4,7 @@ import { Tabs } from "./Tabs"
 import { BetInput } from "./BetInput"
 import { MinesInput } from "./MinesInput"
 import { BetButton } from "./BetButton"
-
+//tod:rename css object to styles
 const tabs = ({
     wrap:css({
         height:"95%",

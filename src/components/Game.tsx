@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
 import { LeftWrap } from "./LeftWrap"
+
+//tod:rename css object to styles
 const gameStyle = {
     container:css({
         display:"flex",

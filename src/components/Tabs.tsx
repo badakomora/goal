@@ -2,6 +2,8 @@
 import { css } from "@emotion/react"
 import { useState } from "react"
 export const Tabs = () =>{
+    //todo:rename and all css outside the component
+
     const tabs = ({
         tabs:css({
             height:"10%",

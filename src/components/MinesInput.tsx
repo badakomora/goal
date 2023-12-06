@@ -2,6 +2,8 @@
 import { css } from "@emotion/react"
 
 export const MinesInput = () =>{
+    //tod:rename css object to styles
+    //todo:css outside component
     const minesinput = ({
         minesinput:css({
             width:"100%",
