@@ -6,12 +6,13 @@ export const MinesInput = () =>{
         minesinput:css({
             width:"100%",
             height:"38px",
-            marginTop:"10px",
+            marginTop:"9px",
             
         }),
         input:css({
             width:"100%",
             height:"100%",
+            color:"white",
             background:"#0f212e",
             border:"#2f4553 2px solid",
         }),
@@ -19,6 +20,7 @@ export const MinesInput = () =>{
             color:"white",
             fontFamily:"Sans-serif",
             fontSize:"12px",
+            marginBottom:"5px"
         }),
         option:css({
             width:"100%",

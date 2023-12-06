@@ -29,7 +29,7 @@ export const LeftWrap = () =>{
                 <BetButton />
             </div>
             <div className="autoTab">
-                bada
+               
             </div>
         </div>
     )
