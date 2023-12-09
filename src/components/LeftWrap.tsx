@@ -25,18 +25,20 @@ export const LeftWrap = () =>{
     const [toggleTabClass, setToggleTabClass] = useState(1) 
     return(
         <div css={tabs.wrap}>
-        <div css={tabs.manualTab}>
-            <Tabs toggleTabClass={toggleTabClass} setToggleTabClass={setToggleTabClass} />
-            <BetInput />
-            <MinesInput />
+            <div css={tabs.manualTab}>
+                <Tabs toggleTabClass={toggleTabClass} setToggleTabClass={setToggleTabClass} />
+                <BetInput />
+                <MinesInput />
+            </div>
             {toggleTabClass === 1 ? (
-            <BetButton />
+            <div css={tabs.manualTab}>
+                <BetButton />
+            </div>
             ) : (
             <div className="autoTab">
                   <BetsNumber/>
             </div>
             )}
-        </div>
 </div>
 
     )

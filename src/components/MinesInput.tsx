@@ -17,12 +17,12 @@ export const MinesInput = () =>{
             color:"white",
             background:"#0f212e",
             border:"#2f4553 2px solid",
+            marginTop:"4px"
         }),
         label:css({
             color:"white",
             fontFamily:"Sans-serif",
             fontSize:"12px",
-            marginBottom:"5px"
         }),
         option:css({
             width:"100%",

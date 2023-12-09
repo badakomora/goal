@@ -6,7 +6,7 @@ const styles = {
   betbutton: css({
     width: "100%",
     height: "45px",
-    marginTop: "30px",
+    marginTop: "35px",
 
     "> button": {
       width: "100%",
