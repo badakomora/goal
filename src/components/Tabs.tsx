@@ -1,7 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
-import { useState } from "react"
-export const Tabs = () =>{
+
+
+
+interface toggleManualAutoTabs{
+    toggleTabClass:number,
+    setToggleTabClass:React.Dispatch<React.SetStateAction<number>>
+}
+export const Tabs:React.FC<toggleManualAutoTabs> = ({toggleTabClass, setToggleTabClass}) =>{
     //todo:rename and all css outside the component
 
     const tabs = ({
@@ -53,7 +59,7 @@ export const Tabs = () =>{
         }),
     })
 
-    const [toggleTabClass, setToggleTabClass] = useState(1) 
+
 
     const toggleTabs = (index: number) =>{
         setToggleTabClass(index)

@@ -4,6 +4,8 @@ import { Tabs } from "./Tabs"
 import { BetInput } from "./BetInput"
 import { MinesInput } from "./MinesInput"
 import { BetButton } from "./BetButton"
+import { useState } from "react"
+import { BetsNumber } from "./BetsNumber"
 //tod:rename css object to styles
 const tabs = ({
     wrap:css({
@@ -20,17 +22,22 @@ const tabs = ({
     })
 })
 export const LeftWrap = () =>{
+    const [toggleTabClass, setToggleTabClass] = useState(1) 
     return(
         <div css={tabs.wrap}>
-            <div css={tabs.manualTab}>
-                <Tabs />
-                <BetInput />
-                <MinesInput />
-                <BetButton />
-            </div>
+        <div css={tabs.manualTab}>
+            <Tabs toggleTabClass={toggleTabClass} setToggleTabClass={setToggleTabClass} />
+            <BetInput />
+            <MinesInput />
+            {toggleTabClass === 1 ? (
+            <BetButton />
+            ) : (
             <div className="autoTab">
-               
+                  <BetsNumber/>
             </div>
+            )}
         </div>
+</div>
+
     )
 }
