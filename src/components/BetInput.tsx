@@ -3,7 +3,7 @@ import { css } from "@emotion/react"
 
 //tod:rename css object to styles
 
-const betinput = ({
+const styles = ({
     betinput:css({
         width:"98%",
         height:"35px",
@@ -84,22 +84,22 @@ const betinput = ({
 export const BetInput = () => {
  
     return(
-        <div css={betinput.container}>
-            <div css={betinput.amountlabel}>
+        <div css={styles.container}>
+            <div css={styles.amountlabel}>
                 <span>Bet Amount</span>
                 <span>KES0.00</span>
             </div>
-            <div css={betinput.betinput}>
-                <div css={betinput.wrap}>
-                    <div css={betinput.inputwrap}>
-                        <input css={betinput.input} type="number" />
-                        <div css={betinput.iconwrap}>
-                            <span css={betinput.icon}>KES</span>
+            <div css={styles.betinput}>
+                <div css={styles.wrap}>
+                    <div css={styles.inputwrap}>
+                        <input css={styles.input} type="number" />
+                        <div css={styles.iconwrap}>
+                            <span css={styles.icon}>KES</span>
                         </div>
                     </div>
-                    <div css={betinput.buttonswrap}>
-                        <button css={betinput.amounthalf}>&frac12;</button>
-                        <button css={betinput.amountdouble}>2x</button>
+                    <div css={styles.buttonswrap}>
+                        <button css={styles.amounthalf}>&frac12;</button>
+                        <button css={styles.amountdouble}>2x</button>
                     </div>
                 </div>
             </div>

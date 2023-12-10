@@ -3,10 +3,10 @@ import { css } from "@emotion/react"
 import { LeftWrap } from "./LeftWrap"
 
 //tod:rename css object to styles
-const gameStyle = {
+const styles = {
     container:css({
         display:"flex",
-        justifyContent:"center"
+        justifyContent:"center",
     }),
     gameWrap:css({
         backgroundColor:"#0f212e",
@@ -29,10 +29,10 @@ const gameStyle = {
 }
 export const Game = () =>{
  return(
-    <div css={gameStyle.container}>
-        <div css={gameStyle.gameWrap}>
-            <div css={gameStyle.sidesWrap}>
-                <div css={gameStyle.leftWrap}>
+    <div css={styles.container}>
+        <div css={styles.gameWrap}>
+            <div css={styles.sidesWrap}>
+                <div css={styles.leftWrap}>
                     <LeftWrap />
                 </div>
                 <div className="rightWrap">

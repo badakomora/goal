@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
 
-const betsnumber = ({
+const styles = ({
     wrap:css({
         width:"98%",
         height:"38px",
@@ -23,11 +23,11 @@ const betsnumber = ({
 })
 export const BetsNumber = () =>{
     return(
-        <div css={betsnumber.wrap}>
-            <span css={betsnumber.label}>
+        <div css={styles.wrap}>
+            <span css={styles.label}>
                 Number of Bets
             </span>
-            <input type="number" css={betsnumber.input} />
+            <input type="number" css={styles.input} />
             <span></span>
         </div>
     )
