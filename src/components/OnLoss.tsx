@@ -83,10 +83,10 @@ const styles = ({
         margin:"auto",
     })
 })
-export const OnWin = () =>{
+export const OnLoss = () =>{
     return(
         <div css={styles.wrap}>
-            <span css={styles.label}>On Win</span>
+            <span css={styles.label}>On Loss</span>
             <div css={styles.buttoninput}>
                 <div css={styles.container}>
                     <div css={styles.buttonswrap}>

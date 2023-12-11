@@ -7,6 +7,7 @@ import { BetButton } from "./BetButton"
 import { useState } from "react"
 import { BetsNumber } from "./BetsNumber"
 import { OnWin } from "./OnWin"
+import { OnLoss } from "./OnLoss"
 
 const styles = ({
     wrap:css({
@@ -39,6 +40,7 @@ export const LeftWrap = () =>{
             <div className="autoTab">
                   <BetsNumber/>
                   <OnWin />
+                  <OnLoss />
             </div>
             )}
 </div>
