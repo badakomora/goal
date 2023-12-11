@@ -27,7 +27,7 @@ export const BetsNumber = () =>{
             <span css={styles.label}>
                 Number of Bets
             </span>
-            <input type="number" css={styles.input} />
+            <input type="number" value="0"  css={styles.input} />
             <span></span>
         </div>
     )

@@ -4,7 +4,7 @@ import { css } from "@emotion/react"
 const styles = ({
     minesinput:css({
         width:"100%",
-        height:"38px",
+        height:"40px",
         marginTop:"9px",
         
     }),

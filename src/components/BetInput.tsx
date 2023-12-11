@@ -32,15 +32,12 @@ const styles = ({
         justifyContent:"space-between",
         width:"75%",
         height:"100%",
-        // border:"#2f4553 2px solid",
-        // background:"white"
         background:"#0f212e"
     }),
     buttonswrap:css({
         display:"flex",
         width:"25%",
         height:"100%",
-        // border:"#2f4553 2px solid",
     }),
     input:css({
         width:"85%",
