@@ -37,18 +37,18 @@ const styles = ({
             width:"80%",
             height:"90%",
             color:"white",
-            background:"#2f4553",
-            border:"none"
+            background:"#1a2c38",
+            border:"none",
+            borderRadius:"2px"
         },
     }),
     iconwrap:css({
-        margin:"auto",
-        height:"90%",
-        width:"22%",
+        height:"100%",
+        width:"20%",
         background:"#2f4553",
     }),
     icon:css({
-        width:"8%",
+        width:"100%",
         color:"white",
         fontFamily:"Sans-serif",
         fontSize:"10px",
@@ -84,7 +84,7 @@ export const OnWin = () =>{
                 <div css={styles.inputwrap}>
                     <input type="number" value={0} />
                     <div css={styles.iconwrap}>
-                        <span css={styles.icon}>KES</span>
+                        <span css={styles.icon}>S</span>
                     </div>
                 </div>
                 </div>
