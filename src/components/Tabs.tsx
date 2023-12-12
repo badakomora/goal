@@ -17,7 +17,7 @@ const styles = ({
         
     }),
     manualTab: css({
-        width: "48%",
+        width: "47%",
         height:"40px",
         background: "#2f4553",
         borderRadius: "4.5rem",
@@ -28,7 +28,7 @@ const styles = ({
         fontFamily:"Sans-serif",
     }),
     autoTab: css({
-        width: "48%",
+        width: "47%",
         borderRadius: "4.5rem",
         background:"transparent",
         border:"none",
@@ -38,7 +38,7 @@ const styles = ({
         fontFamily:"Sans-serif",
         "&:hover": {
             backgroundColor: "#2f4553",
-            width: "48%",
+            width: "47%",
             height:"80%",
             borderRadius: "4.5rem",
             border:"none",
