@@ -45,7 +45,7 @@ const styles = ({
             color:"white",
             background:"#213743",
             border:"none",
-            borderRadius:"2px"
+            borderRadius:"3px"
         },
     }),
     iconouterwrap:css({

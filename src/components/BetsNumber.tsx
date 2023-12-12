@@ -4,7 +4,7 @@ import { css } from "@emotion/react"
 const styles = ({
     wrap:css({
         width:"98%",
-        height:"38px",
+        height:"33px",
         marginTop:"30px",
     }),
     label:css({
