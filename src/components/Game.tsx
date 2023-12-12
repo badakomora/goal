@@ -11,7 +11,7 @@ const styles = {
     }),
     gameWrap:css({
         backgroundColor:"#0f212e",
-        width:"1050px",
+        width:"1000px",
         height:"680px",
     }),
     sidesWrap:css({

@@ -11,8 +11,8 @@ const styles = ({
         justifyContent:"space-around",
         margin:"auto",
         flexWrap:"wrap",
-        height:"93%",
-        width:"90%",
+        height:"95%",
+        width:"95%",
     }),
     tile:css({
         borderRadius:"5px",
