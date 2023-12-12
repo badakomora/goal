@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
+import { useState } from "react"
 
 
 const styles = ({
@@ -55,6 +56,9 @@ const styles = ({
         background:"#213743",
       
     }),
+    iconinnerwrap:css({
+        margin:"auto",
+    }),
     icon:css({
         width:"100%",
         height:"100%",
@@ -79,19 +83,25 @@ const styles = ({
         borderRadius:"5px",
         margin:"2px"
     }),
-    iconinnerwrap:css({
-        margin:"auto",
-    })
+   
 })
 export const OnWin = () =>{
+
+    const [toggleResetIncreasebtnState, settoggleResetIncreasebtnState] = useState(1)
+
+    const toggleResetIncreasebtn = (index:number) =>{
+        settoggleResetIncreasebtnState(index)
+        console.log(index)
+    }
+
     return(
         <div css={styles.wrap}>
             <span css={styles.label}>On Win</span>
             <div css={styles.buttoninput}>
                 <div css={styles.container}>
                     <div css={styles.buttonswrap}>
-                        <button css={styles.btnreset}>Reset</button>
-                        <button css={styles.btnincr}>Increase by:</button>
+                        <button  css={toggleResetIncreasebtnState === 1 ? styles.btnreset : styles.btnincr} onClick={() => toggleResetIncreasebtn(1)}>Reset</button>
+                        <button css={toggleResetIncreasebtnState === 2 ? styles.btnreset : styles.btnincr} onClick={() => toggleResetIncreasebtn(2)}>Increase by:</button>
                     </div>
                     <div css={styles.inputwrap}>
                         <input type="number" value={0} />
