@@ -14,7 +14,7 @@ import { AutoBetButton } from "./AutoBetButton"
 
 const styles = ({
     wrap:css({
-        height:"95%",
+        height:"100%",
         width:"95%",
         margin:"auto",
         display:"block"
@@ -26,7 +26,7 @@ const styles = ({
         display:"none"
     })
 })
-export const LeftWrap = () =>{
+export const LeftSideWrap = () =>{
     const [toggleTabClass, setToggleTabClass] = useState(1) 
     return(
         <div css={styles.wrap}>
@@ -49,7 +49,7 @@ export const LeftWrap = () =>{
                   <AutoBetButton />
             </div>
             )}
-</div>
+        </div>
 
     )
 }
