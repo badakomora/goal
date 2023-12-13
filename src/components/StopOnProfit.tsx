@@ -59,6 +59,8 @@ const styles = ({
         fontSize:"10px",
     }),
 })
+
+//install prettier 
 export const StopOnProfit = () =>{
     return(
         <div css={styles.wrap}>

@@ -21,6 +21,7 @@ const styles = {
   }),
 };
 
+//Todo:: Get rid of this and reuse BetButton Component, use props
 
 export const AutoBetButton = () => {
 

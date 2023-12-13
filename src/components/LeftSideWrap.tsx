@@ -31,7 +31,7 @@ export const LeftSideWrap = () =>{
     return(
         <div css={styles.wrap}>
             <div css={styles.manualTab}>
-                <Tabs toggleTabClass={toggleTabClass} setToggleTabClass={setToggleTabClass} />
+                <Tabs tab={toggleTabClass} setTab={setToggleTabClass} />
                 <BetInput />
                 <MinesInput />
             </div>

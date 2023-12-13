@@ -39,9 +39,11 @@ export const Game = () =>{
         <div css={styles.gameWrap}>
             <div css={styles.sidesWrap}>
                 <div css={styles.leftsidewrap}>
+                    {/* todo:: name appropriately */}
                     <LeftSideWrap />
                 </div>
                 <div css={styles.rightsidewrap}>
+                     {/* todo:: name appropriately */}
                     <RightSideWrap />
                 </div>
             </div>

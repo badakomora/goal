@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
 
-//tod:rename css object to styles
+
 
 const styles = ({
     betinput:css({
