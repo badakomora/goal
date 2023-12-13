@@ -26,7 +26,7 @@ const styles = ({
         display:"none"
     })
 })
-export const LeftSideWrap = () =>{
+export const GameSidebar = () =>{
     const [toggleTabClass, setToggleTabClass] = useState(1) 
     return(
         <div css={styles.wrap}>

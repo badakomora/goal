@@ -14,7 +14,6 @@ const styles = {
     background: "#0f212e",
     border: "#2f4553 2px solid",
     marginTop: "4px",
-
     "> option": {
       width: "100%",
       height: "100%",
@@ -39,30 +38,6 @@ export const MinesInput = () => {
         {MINE_COUNT.map((count) => (
           <option value="">{count}</option>
         ))}
-
-        {/* <option value="" >2</option>
-                    <option value="" >3</option>
-                    <option value="" >4</option>
-                    <option value="" >5</option>
-                    <option value="" >6</option>
-                    <option value="" >7</option>
-                    <option value="" >8</option>
-                    <option value="" >9</option>
-                    <option value="" >10</option>
-                    <option value="" >11</option>
-                    <option value="" >12</option>
-                    <option value="" >13</option>
-                    <option value="" >14</option>
-                    <option value="" >15</option>
-                    <option value="" >16</option>
-                    <option value="" >17</option>
-                    <option value="" >18</option>
-                    <option value="" >19</option>
-                    <option value="" >20</option>
-                    <option value="" >21</option>
-                    <option value="" >22</option>
-                    <option value="" >23</option>
-                    <option value="" >24</option> */}
       </select>
     </div>
   );

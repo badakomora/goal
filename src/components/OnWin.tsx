@@ -49,7 +49,7 @@ const styles = ({
       outline:"none"
     },
     "&:hover":{
-        border:"#2f4557 2px solid"
+        border: "#2f4553 2px solid",
     }
   }),
   toggleinputwrap:css({
@@ -68,7 +68,7 @@ const styles = ({
         outline:"none"
     },
     "&:hover":{
-        border:"#2f4557 2px solid"
+        border: "#2f4553 2px solid",
     }
   }),
   iconouterwrap: css({
@@ -109,7 +109,7 @@ const styles = ({
 export const OnWin= () => {
     const [resetIncr, setresetIncr] = useState(1)
     const toggleRestIncrease = (index: number) => {
-        setresetIncr(index);
+      setresetIncr(index);
     };
 
   return (

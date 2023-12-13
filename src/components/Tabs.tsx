@@ -59,27 +59,28 @@ export const Tabs: React.FC<TabProps> = ({tab: toggleTabClass, setTab: setToggle
     setToggleTabClass(index);
   };
 
-  const buttons = [
-    {
-    id:1,
-    label:"Manual",
-    css:toggleTabClass === 1 ? styles.manualTab : styles.autoTab,
-    onclick:() => toggleTabs(1),
-    },
-    {
-      id:2,
-      label:"Auto",
-      css:toggleTabClass === 2 ? styles.manualTab : styles.autoTab,
-      onclick:() => toggleTabs(2),
-    },
-  ]
+  // const buttons = [
+  //   {
+  //   id:1,
+  //   label:"Manual",
+  //   css:toggleTabClass === 1 ? styles.manualTab : styles.autoTab,
+  //   onclick:() => toggleTabs(1),
+  //   },
+  //   {
+  //     id:2,
+  //     label:"Auto",
+  //     css:toggleTabClass === 2 ? styles.manualTab : styles.autoTab,
+  //     onclick:() => toggleTabs(2),
+  //   },
+  // ]
 
+  const buttons = Array.from({length:2}, (_, index) => index + 1)
   return (
     <div css={styles.tabs}>
       <div css={styles.wrap}>
       {buttons.map((button) => (
-        <button key={button.id} css={button.css} onClick={button.onclick}>
-          {button.label}
+        <button key={button} css={toggleTabClass === button ? styles.manualTab : styles.autoTab} onClick={() => toggleTabs(button)}>
+          {button === 1 ? "Manual" : "Auto"}
         </button>
       ))}
       </div>

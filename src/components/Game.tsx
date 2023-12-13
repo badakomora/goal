@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
-import { LeftSideWrap } from "./LeftSideWrap"
-import { RightSideWrap } from "./RightSideWrap"
+import { GameSidebar } from "./GameSidebar"
+import { GameContent } from "./GameContent"
 
 const styles = {
     container:css({
@@ -10,7 +10,7 @@ const styles = {
     }),
     gameWrap:css({
         backgroundColor:"#0f212e",
-        width:"900px",
+        width:"1000px",
         height:"680px",
     }),
     sidesWrap:css({
@@ -21,13 +21,13 @@ const styles = {
     }),
     leftsidewrap:css({
         backgroundColor:"#213743",
-        width:"33%",
+        width:"30%",
         display:"flex",
         justifyContent:"center"
     }),
     rightsidewrap:css({
         backgroundColor:"#0f212e",
-        width:"67%",
+        width:"70%",
         display:"flex",
         justifyContent:"center"
     })
@@ -39,12 +39,10 @@ export const Game = () =>{
         <div css={styles.gameWrap}>
             <div css={styles.sidesWrap}>
                 <div css={styles.leftsidewrap}>
-                    {/* todo:: name appropriately */}
-                    <LeftSideWrap />
+                    <GameSidebar />
                 </div>
                 <div css={styles.rightsidewrap}>
-                     {/* todo:: name appropriately */}
-                    <RightSideWrap />
+                    <GameContent />
                 </div>
             </div>
             <div className="bottomWrap">
