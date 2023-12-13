@@ -3,7 +3,6 @@ import { css } from "@emotion/react"
 import { LeftSideWrap } from "./LeftSideWrap"
 import { RightSideWrap } from "./RightSideWrap"
 
-//tod:rename css object to styles
 const styles = {
     container:css({
         display:"flex",

@@ -1,44 +1,46 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react"
+import { css } from "@emotion/react";
 
-const styles = ({
-    minesinput:css({
-        width:"100%",
-        height:"40px",
-        marginTop:"9px",
-        
-    }),
-    input:css({
-        width:"100%",
-        height:"100%",
-        color:"white",
-        background:"#0f212e",
-        border:"#2f4553 2px solid",
-        marginTop:"4px",
+const styles = {
+  minesinput: css({
+    width: "100%",
+    height: "40px",
+    marginTop: "9px"
+  }),
+  input: css({
+    width: "100%",
+    height: "100%",
+    color: "white",
+    background: "#0f212e",
+    border: "#2f4553 2px solid",
+    marginTop: "4px",
 
-        "> option":{
-            width:"100%",
-            height:"100%",
-            color:"white",
-            backgroundColor:"#0f212e",
-        },
-    }),
-    label:css({
-        color:"white",
-        fontFamily:"Sans-serif",
-        fontSize:"12px",
-    }),
+    "> option": {
+      width: "100%",
+      height: "100%",
+      color: "white",
+      backgroundColor: "#0f212e"
+    }
+  }),
+  label: css({
+    color: "white",
+    fontFamily: "Sans-serif",
+    fontSize: "12px"
+  })
+};
 
-})
-export const MinesInput = () =>{
-   
-    
-    return(
-        <div css={styles.minesinput}>
-                <span css={styles.label}>Mines</span>
-                <select css={styles.input} >
-                    <option value="" >1</option>
-                    <option value="" >2</option>
+const MINE_COUNT = Array.from({ length: 24 }, (_, index) => index + 1);
+
+export const MinesInput = () => {
+  return (
+    <div css={styles.minesinput}>
+      <span css={styles.label}>Mines</span>
+      <select css={styles.input}>
+        {MINE_COUNT.map((count) => (
+          <option value="">{count}</option>
+        ))}
+
+        {/* <option value="" >2</option>
                     <option value="" >3</option>
                     <option value="" >4</option>
                     <option value="" >5</option>
@@ -60,8 +62,8 @@ export const MinesInput = () =>{
                     <option value="" >21</option>
                     <option value="" >22</option>
                     <option value="" >23</option>
-                    <option value="" >24</option>
-                </select>
-        </div>
-    )
-}
+                    <option value="" >24</option> */}
+      </select>
+    </div>
+  );
+};
