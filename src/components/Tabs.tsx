@@ -53,28 +53,35 @@ interface TabProps {
   tab: number;
   setTab: React.Dispatch<React.SetStateAction<number>>;
 }
-export const Tabs: React.FC<TabProps> = ({
-  tab: toggleTabClass,
-  setTab: setToggleTabClass
-}) => {
+export const Tabs: React.FC<TabProps> = ({tab: toggleTabClass, setTab: setToggleTabClass}) => {
+
   const toggleTabs = (index: number) => {
     setToggleTabClass(index);
   };
 
+  const buttons = [
+    {
+    id:1,
+    label:"Manual",
+    css:toggleTabClass === 1 ? styles.manualTab : styles.autoTab,
+    onclick:() => toggleTabs(1),
+    },
+    {
+      id:2,
+      label:"Auto",
+      css:toggleTabClass === 2 ? styles.manualTab : styles.autoTab,
+      onclick:() => toggleTabs(2),
+    },
+  ]
+
   return (
     <div css={styles.tabs}>
       <div css={styles.wrap}>
-        {/*map tabs you only need one button and stop rewriting code */}
-        <button
-          css={toggleTabClass === 1 ? styles.manualTab : styles.autoTab}
-          onClick={() => toggleTabs(1)}>
-          Manual
+      {buttons.map((button) => (
+        <button key={button.id} css={button.css} onClick={button.onclick}>
+          {button.label}
         </button>
-        <button
-          css={toggleTabClass === 2 ? styles.manualTab : styles.autoTab}
-          onClick={() => toggleTabs(2)}>
-          Auto
-        </button>
+      ))}
       </div>
     </div>
   );

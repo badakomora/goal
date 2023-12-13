@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import { useState } from "react";
 
-const styles = {
+const styles = ({
   wrap: css({
     display: "block",
     marginTop: "35px",
@@ -37,22 +37,44 @@ const styles = {
     width: "48%",
     height: "99%",
     display: "flex",
-    background: "#2f4553",
+    background: "#0f212e",
     margin: "auto",
     "> input": {
       width: "85%",
       height: "97%",
       color: "white",
-      background: "#213743",
+      background:"transparent",
       border: "none",
-      borderRadius: "3px"
+      borderRadius: "3px",
+      outline:"none"
+    },
+    "&:hover":{
+        border:"#2f4557 2px solid"
+    }
+  }),
+  toggleinputwrap:css({
+    width: "48%",
+    height: "99%",
+    display: "flex",
+    background: "#213743",
+    margin: "auto",
+    "> input": {
+        width: "85%",
+        height: "97%",
+        color: "white",
+        background:"transparent",
+        border: "none",
+        borderRadius: "3px",
+        outline:"none"
+    },
+    "&:hover":{
+        border:"#2f4557 2px solid"
     }
   }),
   iconouterwrap: css({
     display: "flex",
     height: "100%",
     width: "15%",
-    background: "#213743"
   }),
   iconinnerwrap: css({
     margin: "auto"
@@ -81,16 +103,14 @@ const styles = {
     borderRadius: "5px",
     margin: "2px"
   })
-};
-export const OnWin = () => {
-  //todo:: simple naming this is too long
-  const [toggleResetIncreasebtnState, settoggleResetIncreasebtnState] =
-    useState(1);
+});
 
-  const toggleResetIncreasebtn = (index: number) => {
-    settoggleResetIncreasebtnState(index);
-    console.log(index);
-  };
+
+export const OnWin= () => {
+    const [resetIncr, setresetIncr] = useState(1)
+    const toggleRestIncrease = (index: number) => {
+        setresetIncr(index);
+    };
 
   return (
     <div css={styles.wrap}>
@@ -100,24 +120,29 @@ export const OnWin = () => {
           <div css={styles.buttonswrap}>
             <button
               css={
-                toggleResetIncreasebtnState === 1
+                resetIncr === 1
                   ? styles.btnreset
                   : styles.btnincr
               }
-              onClick={() => toggleResetIncreasebtn(1)}>
+              onClick={() => toggleRestIncrease(1)}>
               Reset
             </button>
             <button
               css={
-                toggleResetIncreasebtnState === 2
+                resetIncr === 2
                   ? styles.btnreset
                   : styles.btnincr
               }
-              onClick={() => toggleResetIncreasebtn(2)}>
+              onClick={() => toggleRestIncrease(2)}>
               Increase by:
             </button>
           </div>
-          <div css={styles.inputwrap}>
+          <div 
+            css={
+            resetIncr === 2
+                ? styles.inputwrap
+                : styles.toggleinputwrap
+              }>
             <input type="number" value={0} />
             <div css={styles.iconouterwrap}>
               <div css={styles.iconinnerwrap}>
