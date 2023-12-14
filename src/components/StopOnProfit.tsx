@@ -24,19 +24,20 @@ const styles = ({
         margin:"auto",
         display:"flex",
         height:"90%",
-        width:"98%"
+        width:"98%",
+        background:"#0f212e",
     }),
     inputwrap:css({
         width:"100%",
         height:"100%",
         display:"flex",
-        background:"#2f4553",
+        background:"transparent",
         margin:"auto",
         "> input":{
             width:"85%",
             height:"97%",
             color:"white",
-           background:"#0f212e",
+            background:"transparent",
             border:"none",
             borderRadius:"3px"
         },
@@ -45,7 +46,7 @@ const styles = ({
         display:"flex",
         height:"100%",
         width:"15%",
-       background:"#0f212e",
+    //    background:"#0f212e",
       
     }),
     iconinnerwrap:css({
