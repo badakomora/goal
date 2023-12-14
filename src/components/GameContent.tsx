@@ -18,7 +18,11 @@ const styles = {
           border: "none",
           width: "109.77px",
           height: "109.78px",
-          boxShadow: "0 3px 2px rgba(0,0,0,.1)"
+          boxShadow: "0 3px 2px rgba(0,0,0,.1)",
+          "&:hover":{
+            transition:"background 0.4s ease-in-out",
+            background:"#557086"
+          }
         }
     },
   }),
