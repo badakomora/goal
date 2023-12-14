@@ -46,7 +46,7 @@ const styles = ({
       background:"transparent",
       border: "none",
       borderRadius: "3px",
-      outline:"none"
+      outline:"none",
     },
     "&:hover":{
         border: "#2f4553 2px solid",
@@ -65,7 +65,8 @@ const styles = ({
         background:"transparent",
         border: "none",
         borderRadius: "3px",
-        outline:"none"
+        outline:"none",
+        cursor:"no-drop"
     },
     "&:hover":{
         border: "#2f4553 2px solid",
@@ -137,7 +138,7 @@ export const OnLoss= () => {
                 ? styles.inputwrap
                 : styles.toggleinputwrap
               }>
-            <input type="number" value={0} />
+            <input type="number" disabled={resetIncr === 1 ? true : false} value={0} />
             <div css={styles.iconouterwrap}>
               <div css={styles.iconinnerwrap}>
                 <span css={styles.icon}>%</span>
