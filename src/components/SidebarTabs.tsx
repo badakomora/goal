@@ -53,10 +53,9 @@ interface TabProps {
   tab: number;
   setTab: React.Dispatch<React.SetStateAction<number>>;
 }
-export const SidebarTabs: React.FC<TabProps> = ({tab: toggleTabClass, setTab: setToggleTabClass}) => {
-
+export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab }) => {
   const toggleTabs = (index: number) => {
-    setToggleTabClass(index);
+    setTab(index);
   };
 
   // const buttons = [
@@ -74,15 +73,18 @@ export const SidebarTabs: React.FC<TabProps> = ({tab: toggleTabClass, setTab: se
   //   },
   // ]
 
-  const buttons = Array.from({length:2}, (_, index) => index + 1)
+  const tabs = Array.from({ length: 2 }, (_, index) => index + 1);
   return (
     <div css={styles.tabs}>
       <div css={styles.wrap}>
-      {buttons.map((button) => (
-        <button key={button} css={toggleTabClass === button ? styles.manualTab : styles.autoTab} onClick={() => toggleTabs(button)}>
-          {button === 1 ? "Manual" : "Auto"}
-        </button>
-      ))}
+        {tabs.map((index) => (
+          <button
+            key={index}
+            css={tab === index ? styles.manualTab : styles.autoTab}
+            onClick={() => toggleTabs(index)}>
+            {index === 1 ? "Manual" : "Auto"}
+          </button>
+        ))}
       </div>
     </div>
   );

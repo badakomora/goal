@@ -27,9 +27,11 @@ const styles = {
     },
   }),
 };
-export const GameContent = () => {
 
-  const TILES = Array.from({length:25}, (_, index) => index + 1)
+const TILES = Array.from({length:25}, (_, index) => index + 1)
+
+
+export const GameContent = () => {
   return (
     <div css={styles.wrap}>
       <div>
