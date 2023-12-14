@@ -56,22 +56,8 @@ interface TabProps {
 export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab }) => {
   const toggleTabs = (index: number) => {
     setTab(index);
-  };
+};
 
-  // const buttons = [
-  //   {
-  //   id:1,
-  //   label:"Manual",
-  //   css:toggleTabClass === 1 ? styles.manualTab : styles.autoTab,
-  //   onclick:() => toggleTabs(1),
-  //   },
-  //   {
-  //     id:2,
-  //     label:"Auto",
-  //     css:toggleTabClass === 2 ? styles.manualTab : styles.autoTab,
-  //     onclick:() => toggleTabs(2),
-  //   },
-  // ]
 
   const tabs = Array.from({ length: 2 }, (_, index) => index + 1);
   return (

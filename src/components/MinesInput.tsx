@@ -36,7 +36,7 @@ export const MinesInput = () => {
       <span css={styles.label}>Mines</span>
       <select css={styles.input}>
         {MINE_COUNT.map((count) => (
-          <option value="">{count}</option>
+          <option key={count} value="">{count}</option>
         ))}
       </select>
     </div>

@@ -1,32 +1,16 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { SerializedStyles } from "@emotion/react";
 
+interface betButtonProps{
+  label:string,
+  manualbetstyles?:SerializedStyles,
+  autobetstyles?:SerializedStyles,
+}
 
-const styles = {
-  betbutton: css({
-    width: "100%",
-    height: "45px",
-    marginTop: "35px",
-
-    "> button": {
-      width: "100%",
-      height: "100%",
-      backgroundColor: "#00e701",
-      borderRadius: "5px",
-      border: "none",
-      "&:hover": {
-        backgroundColor: "#1fff20",
-      },
-    },
-  }),
-};
-
-
-export const BetButton = () => {
-
+export const BetButton:React.FC<betButtonProps> = ({label, manualbetstyles, autobetstyles}) => {
   return (
-    <div css={styles.betbutton}>
-      <button>Bet</button>
+    <div css={[manualbetstyles, autobetstyles]}>
+      <button>{label}</button>
     </div>
   );
 };
