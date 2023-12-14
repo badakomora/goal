@@ -10,7 +10,6 @@ import { OnWin } from "./OnWin";
 import { OnLoss } from "./OnLoss";
 import { StopOnProfit } from "./StopOnProfit";
 import { StopOnLoss } from "./StopOnLoss";
-// import { AutoBetButton } from "./AutoBetButton";
 
 const styles = {
   wrap: css({

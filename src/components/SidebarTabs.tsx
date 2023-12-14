@@ -5,7 +5,7 @@ const styles = {
   tabs: css({
     height: "10%",
     width: "100%",
-    marginTop: "10px"
+    marginTop: "10px",
   }),
   wrap: css({
     background: "#0f212e",
@@ -13,7 +13,7 @@ const styles = {
     height: "48px",
     display: "flex",
     justifyContent: "center",
-    borderRadius: " 3rem"
+    borderRadius: " 3rem",
   }),
   manualTab: css({
     width: "47%",
@@ -24,7 +24,7 @@ const styles = {
     margin: "auto",
     color: "white",
     fontSize: "12px",
-    fontFamily: "Sans-serif"
+    fontFamily: "Sans-serif",
   }),
   autoTab: css({
     width: "47%",
@@ -44,9 +44,9 @@ const styles = {
       margin: "auto",
       color: "white",
       fontSize: "12px",
-      fontFamily: "Sans-serif"
-    }
-  })
+      fontFamily: "Sans-serif",
+    },
+  }),
 };
 
 interface TabProps {
@@ -56,8 +56,7 @@ interface TabProps {
 export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab }) => {
   const toggleTabs = (index: number) => {
     setTab(index);
-};
-
+  };
 
   const tabs = Array.from({ length: 2 }, (_, index) => index + 1);
   return (
@@ -67,7 +66,8 @@ export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab }) => {
           <button
             key={index}
             css={tab === index ? styles.manualTab : styles.autoTab}
-            onClick={() => toggleTabs(index)}>
+            onClick={() => toggleTabs(index)}
+          >
             {index === 1 ? "Manual" : "Auto"}
           </button>
         ))}

@@ -127,7 +127,7 @@ export const OnWin= () => {
                   : styles.btnincr
               }
               onClick={() => toggleRestIncrease(button)}>
-              {resetIncr === 1 ? "Reset" : "Increase by:"}
+              {button === 1 ? "Reset" : "Increase by:"}
               </button>
             ))}
           </div>
