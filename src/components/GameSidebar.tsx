@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
-import { Tabs } from "./Tabs"
+import { SidebarTabs } from "./SidebarTabs"
 import { BetInput } from "./BetInput"
 import { MinesInput } from "./MinesInput"
 import { BetButton } from "./BetButton"
@@ -31,7 +31,7 @@ export const GameSidebar = () =>{
     return(
         <div css={styles.wrap}>
             <div css={styles.manualTab}>
-                <Tabs tab={toggleTabClass} setTab={setToggleTabClass} />
+                <SidebarTabs tab={toggleTabClass} setTab={setToggleTabClass} />
                 <BetInput />
                 <MinesInput />
             </div>

@@ -53,7 +53,7 @@ interface TabProps {
   tab: number;
   setTab: React.Dispatch<React.SetStateAction<number>>;
 }
-export const Tabs: React.FC<TabProps> = ({tab: toggleTabClass, setTab: setToggleTabClass}) => {
+export const SidebarTabs: React.FC<TabProps> = ({tab: toggleTabClass, setTab: setToggleTabClass}) => {
 
   const toggleTabs = (index: number) => {
     setToggleTabClass(index);
