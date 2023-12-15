@@ -106,13 +106,12 @@ const styles = {
   }),
 };
 
-
-export const OnLoss= () => {
-    const [resetIncr, setresetIncr] = useState(1)
-    const resetIncrArray = Array.from({length:2}, (_, index) => index + 1)
-    const toggleRestIncrease = (index: number) => {
-      setresetIncr(index);
-    };
+export const OnLoss = () => {
+  const [resetIncr, setresetIncr] = useState(1);
+  const resetIncrArray = Array.from({ length: 2 }, (_, index) => index + 1);
+  const toggleRestIncrease = (index: number) => {
+    setresetIncr(index);
+  };
 
   return (
     <div css={styles.wrap}>
@@ -122,23 +121,21 @@ export const OnLoss= () => {
           <div css={styles.buttonswrap}>
             {resetIncrArray.map((button) => (
               <button
-              css={
-                resetIncr === button
-                  ? styles.btnreset
-                  : styles.btnincr
-              }
-              onClick={() => toggleRestIncrease(button)}>
-              {button === 1 ? "Reset" : "Increase by:"}
+                css={resetIncr === button ? styles.btnreset : styles.btnincr}
+                onClick={() => toggleRestIncrease(button)}
+              >
+                {button === 1 ? "Reset" : "Increase by:"}
               </button>
             ))}
           </div>
-          <div 
-            css={
-            resetIncr === 2
-                ? styles.inputwrap
-                : styles.toggleinputwrap
-              }>
-            <input type="number" disabled={resetIncr === 1 ? true : false} value={0} />
+          <div
+            css={resetIncr === 2 ? styles.inputwrap : styles.toggleinputwrap}
+          >
+            <input
+              type="number"
+              disabled={resetIncr === 1 ? true : false}
+              value={0}
+            />
             <div css={styles.iconouterwrap}>
               <div css={styles.iconinnerwrap}>
                 <span css={styles.icon}>%</span>

@@ -8,7 +8,7 @@ import { useState } from "react";
 import { BetsNumber } from "./BetsNumber";
 import { OnWin } from "./OnWin";
 import { OnLoss } from "./OnLoss";
-import { manualbetbutton, autobetbutton, betsNumberStyles } from "../Styles";
+import { manualbetbutton, autobetbutton, betsNumberStyles, OnWinStyles } from "../Styles";
 
 const styles = {
   wrap: css({
@@ -40,7 +40,7 @@ export const GameSidebar = () => {
       ) : (
         <div className="autoTab">
           <BetsNumber label={"Number Of Bets"} cssStyles={betsNumberStyles.wrap} icon={"\u221E"} />
-          <OnWin />
+          <OnWin label={"On Win"} icon={"%"} cssStyles={OnWinStyles.wrap}  />
           <OnLoss />
           <BetsNumber label={"Stop On Profit"} cssStyles={betsNumberStyles.wrap} icon={"KES"} />
           <BetsNumber label={"Stop On Loss"} cssStyles={betsNumberStyles.wrap} icon={"KES"} />
