@@ -1,76 +1,22 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react"
+import { SerializedStyles} from "@emotion/react"
 
-const styles = ({
-    wrap:css({
-        display:"block",
-        marginTop:"35px",
-        width:"100%",
-        height:"42px",
-    }),
-    label:css({
-        color:"white",
-        fontFamily:"Sans-serif",
-        fontSize:"12px",
-    }),
-    inputicon:css({
-        display:"flex",
-        width:"100%",
-        height:"100%",
-        marginTop:"5px",
-        background: "#2f4553",
-    }),
-    container:css({
-        margin:"auto",
-        display:"flex",
-        height:"90%",
-        width:"98%",
-        background:"#0f212e",
-    }),
-    inputwrap:css({
-        width:"100%",
-        height:"100%",
-        display:"flex",
-        background:"transparent",
-        margin:"auto",
-        "> input":{
-            width:"85%",
-            height:"97%",
-            color:"white",
-            background:"transparent",
-            border:"none",
-            borderRadius:"3px"
-        },
-    }),
-    iconouterwrap:css({
-        display:"flex",
-        height:"100%",
-        width:"15%",
-    //    background:"#0f212e",
-      
-    }),
-    iconinnerwrap:css({
-        margin:"auto",
-    }),
-    icon:css({
-        width:"100%",
-        height:"100%",
-        color:"white",
-        fontFamily:"Sans-serif",
-        fontSize:"20px",
-    }),
-})
-export const BetsNumber = () =>{
+interface betsNumberProps{
+    label:string,
+    cssStyles:SerializedStyles,
+    icon:string,
+}
+export const BetsNumber:React.FC<betsNumberProps> = ({label, cssStyles, icon}) =>{
     return(
-        <div css={styles.wrap}>
-            <span css={styles.label}>Number Of Bets</span>
-            <div css={styles.inputicon}>
-                <div css={styles.container}>
-                    <div css={styles.inputwrap}>
+        <div css={cssStyles}>
+            <label>{label}</label>
+            <div>
+                <div>
+                    <div >
                         <input type="number" value={0} />
-                        <div css={styles.iconouterwrap}>
-                            <div css={styles.iconinnerwrap}>
-                                <span css={styles.icon}>{"\u221E"} </span>
+                        <div>
+                            <div>
+                                <span>{icon}</span>
                             </div>
                         </div>
                     </div>

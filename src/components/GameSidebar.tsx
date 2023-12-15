@@ -8,8 +8,7 @@ import { useState } from "react";
 import { BetsNumber } from "./BetsNumber";
 import { OnWin } from "./OnWin";
 import { OnLoss } from "./OnLoss";
-import { StopOnProfit } from "./StopOnProfit";
-import { StopOnLoss } from "./StopOnLoss";
+import { manualbetbutton, autobetbutton, betsNumberStyles } from "../Styles";
 
 const styles = {
   wrap: css({
@@ -24,36 +23,6 @@ const styles = {
   autoTab: css({
     display: "none",
   }),
-  manualbetbutton: css({
-    width: "100%",
-    height: "45px",
-    marginTop: "35px",
-    "> button": {
-      width: "100%",
-      height: "100%",
-      backgroundColor: "#00e701",
-      borderRadius: "5px",
-      border: "none",
-      "&:hover": {
-        backgroundColor: "#1fff20",
-      }
-    }
-  }),
-  autobetbutton: css({
-    width: "100%",
-    height: "45px",
-    marginTop: "35px",
-      "> button": {
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#00b801",
-        borderRadius: "5px",
-        border: "none",
-        "&:hover": {
-          backgroundColor: "#00b801",
-        },
-    },
-  }),
 };
 export const GameSidebar = () => {
   const [toggleTabClass, setToggleTabClass] = useState(1);
@@ -66,16 +35,16 @@ export const GameSidebar = () => {
       </div>
       {toggleTabClass === 1 ? (
         <div css={styles.manualTab}>
-          <BetButton label={"Bet"} manualbetstyles={styles.manualbetbutton} />
+          <BetButton label={"Bet"} manualbetstyles={manualbetbutton.wrap} />
         </div>
       ) : (
         <div className="autoTab">
-          <BetsNumber />
+          <BetsNumber label={"Number Of Bets"} cssStyles={betsNumberStyles.wrap} icon={"\u221E"} />
           <OnWin />
           <OnLoss />
-          <StopOnProfit />
-          <StopOnLoss />
-          <BetButton label={"Start AutoBet"} autobetstyles={styles.autobetbutton} />
+          <BetsNumber label={"Stop On Profit"} cssStyles={betsNumberStyles.wrap} icon={"KES"} />
+          <BetsNumber label={"Stop On Loss"} cssStyles={betsNumberStyles.wrap} icon={"KES"} />
+          <BetButton label={"Start AutoBet"} autobetstyles={autobetbutton.wrap} />
         </div>
       )}
     </div>
