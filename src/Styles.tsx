@@ -179,41 +179,41 @@ export const OnWinStyles = ({
                         }
                     }
                 },
-                "> toggleinputwrap": css({
-                    width: "48%",
-                    height: "99%",
-                    display: "flex",
-                    background: "#213743",
-                    margin: "auto",
-                    "> input": {
-                      width: "85%",
-                      height: "97%",
-                      color: "white",
-                      background: "transparent",
-                      border: "none",
-                      borderRadius: "3px",
-                      outline: "none",
-                      cursor: "no-drop",
-                    },
-                    "&:hover": {
-                      border: "#2f4553 2px solid",
-                    },
-                    "> div":{
-                        display: "flex",
-                        height: "100%",
-                        width: "15%",
-                        "> div":{
-                            margin: "auto",
-                            "> span":{
-                                width: "100%",
-                                height: "100%",
-                                color: "white",
-                                fontFamily: "Sans-serif",
-                                fontSize: "12px",
-                            }
-                        }
-                    }
-                  }),
+                // "> toggleinputwrap": css({
+                //     width: "48%",
+                //     height: "99%",
+                //     display: "flex",
+                //     background: "#213743",
+                //     margin: "auto",
+                //     "> input": {
+                //       width: "85%",
+                //       height: "97%",
+                //       color: "white",
+                //       background: "transparent",
+                //       border: "none",
+                //       borderRadius: "3px",
+                //       outline: "none",
+                //       cursor: "no-drop",
+                //     },
+                //     "&:hover": {
+                //       border: "#2f4553 2px solid",
+                //     },
+                //     "> div":{
+                //         display: "flex",
+                //         height: "100%",
+                //         width: "15%",
+                //         "> div":{
+                //             margin: "auto",
+                //             "> span":{
+                //                 width: "100%",
+                //                 height: "100%",
+                //                 color: "white",
+                //                 fontFamily: "Sans-serif",
+                //                 fontSize: "12px",
+                //             }
+                //         }
+                //     }
+                //   }),
             }
         }
     })
