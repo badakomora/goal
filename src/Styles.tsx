@@ -21,7 +21,7 @@ export const manualbetbutton = ({
   })
 })
 
-  export const autobetbutton = ({
+export const autobetbutton = ({
     wrap: css({
     width: "100%",
     height: "45px",
