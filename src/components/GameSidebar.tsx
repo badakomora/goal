@@ -26,6 +26,8 @@ const styles = {
 };
 export const GameSidebar = () => {
   const [toggleTabClass, setToggleTabClass] = useState(1);
+  const [resetIncr, setresetIncr] = useState(1);
+  
   return (
     <div css={styles.wrap}>
       <div css={styles.manualTab}>
@@ -40,7 +42,7 @@ export const GameSidebar = () => {
       ) : (
         <div className="autoTab">
           <BetsNumber label={"Number Of Bets"} cssStyles={betsNumberStyles.wrap} icon={"\u221E"} />
-          <OnWin label={"On Win"} icon={"%"} cssStyles={OnWinStyles.wrap}  />
+          <OnWin label={"On Win"} icon={"%"} cssStyles={OnWinStyles.wrap} resetIncr={resetIncr} setresetIncr={setresetIncr}  />
           <OnLoss />
           <BetsNumber label={"Stop On Profit"} cssStyles={betsNumberStyles.wrap} icon={"KES"} />
           <BetsNumber label={"Stop On Loss"} cssStyles={betsNumberStyles.wrap} icon={"KES"} />

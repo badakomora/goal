@@ -1,15 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { SerializedStyles } from "@emotion/react";
-import { useState } from "react";
+import { onWinProps, resetIncrBtnPrps,  } from "../types";
 
-interface onWinProps{
-  label:string,
-  icon:string,
-  cssStyles:SerializedStyles,
-}
-export const OnWin:React.FC<onWinProps> = ({label, icon, cssStyles}) => {
 
-  const [resetIncr, setresetIncr] = useState(1);
+
+
+export const OnWin:React.FC<onWinProps & resetIncrBtnPrps> = ({label, icon, cssStyles, resetIncr, setresetIncr}) => {
+
+ 
   const resetIncrArray = Array.from({ length: 2 }, (_, index) => index + 1);
   const toggleRestIncrease = (index: number) => {
     setresetIncr(index);
