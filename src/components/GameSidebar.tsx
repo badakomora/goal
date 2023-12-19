@@ -36,7 +36,7 @@ export const GameSidebar = () => {
       </div>
       {toggleTabClass === 1 ? (
         <div css={styles.manualTab}>
-          <BetButton label={"Bet"} />
+          <BetButton label={"Bet"} databetbutton={1} />
         </div>
       ) : (
         <div className="autoTab">
@@ -45,7 +45,7 @@ export const GameSidebar = () => {
           <OnLoss />
           <BetsNumber label={"Stop On Profit"}  icon={"KES"} />
           <BetsNumber label={"Stop On Loss"} icon={"KES"} />
-          <BetButton label={"Start AutoBet"} />
+          <BetButton label={"Start AutoBet"} databetbutton={2} />
         </div>
       )}
     </div>
