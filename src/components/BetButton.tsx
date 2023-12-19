@@ -33,7 +33,7 @@ interface betButtonProps{
 
 export const BetButton:React.FC<betButtonProps> = ({label, databetbutton}) => {
   return (
-    <div css={[styles.wrap]}>
+    <div css={styles.wrap}>
       <button data-betbutton={databetbutton}>{label}</button>
     </div>
   );
