@@ -32,14 +32,14 @@ const OnWinStyles = ({
           width: '52%',
           height: '99%',
           margin: 'auto',
-          '> button:first-child': {
+          '> button': {
             background: '#0f212e',
             border: 'none',
             color: 'white',
             borderRadius: '5px',
             margin: '2px',
           },
-          '> button:last-child': {
+          '> button:last-of-type': {
             background: '#2f4553',
             border: 'none',
             color: 'white',
@@ -50,7 +50,7 @@ const OnWinStyles = ({
             },
           },
         },
-        '> div:last-child': {
+        '> div:last-of-type': {
           width: '48%',
           height: '99%',
           display: 'flex',
