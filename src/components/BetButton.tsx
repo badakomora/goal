@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export const manualbetbutton = ({
+export const styles = ({
   wrap: css({
   width: "100%",
   height: "45px",
@@ -33,7 +33,7 @@ interface betButtonProps{
 
 export const BetButton:React.FC<betButtonProps> = ({label, databetbutton}) => {
   return (
-    <div css={[manualbetbutton.wrap]}>
+    <div css={[styles.wrap]}>
       <button data-betbutton={databetbutton}>{label}</button>
     </div>
   );

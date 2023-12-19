@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 import { useState } from "react";
 
 
-const OnWinStyles = ({
+const styles = ({
   wrap:css({
     display: 'block',
     marginTop: '35px',
@@ -112,7 +112,7 @@ export const OnWin:React.FC<onWinProps> = ({label, icon}) => {
  
 
   return (
-    <div css={OnWinStyles.wrap}>
+    <div css={styles.wrap}>
       <label>{label}</label>
       <div>
         <div>

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
-export const betsNumberStyles = ({
+export const styles = ({
     wrap:css({
         display:"block",
         width:"100%",
@@ -65,7 +65,7 @@ interface betsNumberProps{
 }
 export const BetsNumber:React.FC<betsNumberProps> = ({label, icon}) =>{
     return(
-        <div css={betsNumberStyles.wrap}>
+        <div css={styles.wrap}>
             <label>{label}</label>
             <div>
                 <div>
