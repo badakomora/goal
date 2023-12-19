@@ -9,7 +9,6 @@ export const manualbetbutton = ({
   "> button": {
     width: "100%",
     height: "100%",
-    // backgroundColor: "#00e701",
     '& [data-betbutton="2"]': {
       background: '#00b801"',
     },
