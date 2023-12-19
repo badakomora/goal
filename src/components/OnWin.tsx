@@ -54,7 +54,7 @@ const styles = ({
           width: '48%',
           height: '99%',
           display: 'flex',
-          // background:  === 1 ? '#0f212e' : '#213743',
+          background: '#213743',
           margin: 'auto',
           '> input': {
             width: '85%',
@@ -64,13 +64,6 @@ const styles = ({
             border: 'none',
             borderRadius: '3px',
             outline: 'none',
-          },
-          '& [data-resetincr="2"]': {
-            background: '#213743',
-          },
-      
-          '& [data-resetincr="1"]': {
-            background: '#0f212e',
           },
           '> div': {
             display: 'flex',
@@ -93,7 +86,7 @@ const styles = ({
   }),
 });
 
-
+ // background:  === 1 ? '#0f212e' : '#213743',
 export interface onWinProps {
   label: string;
   icon: string;
