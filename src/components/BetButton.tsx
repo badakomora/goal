@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export const styles = ({
+const styles = ({
   wrap: css({
   width: "100%",
   height: "45px",
@@ -22,7 +22,7 @@ export const styles = ({
       backgroundColor: "#1fff20",
     }
   }
-})
+  })
 })
 
 
