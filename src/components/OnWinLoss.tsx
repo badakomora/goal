@@ -106,7 +106,11 @@ const styles = {
   }),
 };
 
-export const OnLoss = () => {
+interface onWinProps{
+  label:string,
+}
+
+export const OnLoss:React.FC<onWinProps> = ({label}) => {
   const [resetIncr, setresetIncr] = useState(1);
   const resetIncrArray = Array.from({ length: 2 }, (_, index) => index + 1);
   const toggleRestIncrease = (index: number) => {
@@ -115,7 +119,7 @@ export const OnLoss = () => {
 
   return (
     <div css={styles.wrap}>
-      <span css={styles.label}>On Loss</span>
+      <span css={styles.label}>{label}</span>
       <div css={styles.buttoninput}>
         <div css={styles.container}>
           <div css={styles.buttonswrap}>

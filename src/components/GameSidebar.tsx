@@ -6,8 +6,8 @@ import { MinesInput } from "./MinesInput";
 import { BetButton } from "./BetButton";
 import { useState } from "react";
 import { BetsNumber } from "./BetsNumber";
-import { OnWin } from "./OnWin";
-import { OnLoss } from "./OnLoss";
+// import { OnWin } from "./OnWin";
+import { OnLoss } from "./OnWinLoss";
 
 const styles = {
   wrap: css({
@@ -41,8 +41,9 @@ export const GameSidebar = () => {
       ) : (
         <div className="autoTab">
           <BetsNumber label={"Number Of Bets"} icon={"\u221E"} />
-          <OnWin label={"On Win"} icon={"%"}  />
-          <OnLoss />
+          {/* <OnWin label={"On Win"} icon={"%"}  /> */}
+          <OnLoss label={"On Win"} />
+          <OnLoss label={"On Loss"} />
           <BetsNumber label={"Stop On Profit"}  icon={"KES"} />
           <BetsNumber label={"Stop On Loss"} icon={"KES"} />
           <BetButton label={"Start AutoBet"} databetbutton={2} />
