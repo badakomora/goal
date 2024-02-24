@@ -5,7 +5,7 @@ import { BetInput } from "./BetInput";
 import { MinesInput } from "./MinesInput";
 import { BetButton } from "./BetButton";
 import { useState } from "react";
-import { BetsNumber } from "./BetsNumber";
+import { BetsNumber } from "./StopOnProfitLoss";
 // import { OnWin } from "./OnWin";
 import { OnLoss } from "./OnWinLoss";
 
