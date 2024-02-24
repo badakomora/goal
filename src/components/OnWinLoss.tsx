@@ -52,73 +52,42 @@ const styles = {
             },
           },
         },
-        "> div:second-of-type":{
-
+        "> div:nth-of-type(2)":{
+            width: "48%",
+            height: "99%",
+            display: "flex",
+            background: "#0f212e",
+            margin: "auto",
+            "> input": {
+              width: "85%",
+              height: "97%",
+              color: "white",
+              background: "transparent",
+              border: "none",
+              borderRadius: "3px",
+              outline: "none",
+            },
+            "> div":{
+              display: "flex",
+              height: "100%",
+              width: "15%",
+              "> div":{
+                margin: "auto",
+                "> span":{
+                  width: "100%",
+                  height: "100%",
+                  color: "white",
+                  fontFamily: "Sans-serif",
+                  fontSize: "12px",
+                }
+              }
+            },
         },
       }
     }
   }),
 
 
-
-
-
-
-  
-  inputwrap: css({
-    width: "48%",
-    height: "99%",
-    display: "flex",
-    background: "#0f212e",
-    margin: "auto",
-    "> input": {
-      width: "85%",
-      height: "97%",
-      color: "white",
-      background: "transparent",
-      border: "none",
-      borderRadius: "3px",
-      outline: "none",
-    },
-    "&:hover": {
-      border: "#2f4553 2px solid",
-    },
-  }),
-  toggleinputwrap: css({
-    width: "48%",
-    height: "99%",
-    display: "flex",
-    background: "#213743",
-    margin: "auto",
-    "> input": {
-      width: "85%",
-      height: "97%",
-      color: "white",
-      background: "transparent",
-      border: "none",
-      borderRadius: "3px",
-      outline: "none",
-      cursor: "no-drop",
-    },
-    "&:hover": {
-      border: "#2f4553 2px solid",
-    },
-  }),
-  iconouterwrap: css({
-    display: "flex",
-    height: "100%",
-    width: "15%",
-  }),
-  iconinnerwrap: css({
-    margin: "auto",
-  }),
-  icon: css({
-    width: "100%",
-    height: "100%",
-    color: "white",
-    fontFamily: "Sans-serif",
-    fontSize: "12px",
-  }),
 };
 
 interface onWinProps{
@@ -138,34 +107,26 @@ export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
       <label>{label}</label>
       <div>
         <div>
-
-          <div>
-         
-          {resetIncrArray.map((button) => (
-            resetIncr === button ? (
-              <button key={button}  onClick={() => toggleRestIncrease(button)}>Reset</button>
-            ) : (
-              <button key={button}  onClick={() => toggleRestIncrease(button)}>Increase by:</button>
-            )
-          ))}
-
-            
+        <div>
+            {resetIncrArray.map((button) => (
+            <button key={button}  onClick={() => toggleRestIncrease(button)}>
+                {button === 1 ? "Reset" : "Increase by:"}
+            </button>         
+            ))}
           </div>
-          <div
-            css={resetIncr === 2 ? styles.inputwrap : styles.toggleinputwrap}
-          >
-            <input
+       <div>
+       {resetIncrArray.map((button) => (
+            <><input
               type="number"
-              disabled={resetIncr === 1 ? true : false}
-              value={0}
-            />
-            <div css={styles.iconouterwrap}>
-              <div css={styles.iconinnerwrap}>
-                <span css={styles.icon}>%</span>
-              </div>
-            </div>
-          </div>
-
+              disabled={resetIncr === button}
+              value={0} />
+              <div>
+                <div>
+                  <span>%</span>
+                </div>
+              </div></>
+          ))}
+        </div>
         </div>
       </div>
     </div>
