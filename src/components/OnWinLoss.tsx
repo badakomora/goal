@@ -28,13 +28,31 @@ const styles = {
         height: "90%",
         width: "98%",
 
-        "> div:first-child":{
+        "> div:first-of-type":{
           display: "flex",
           width: "52%",
           height: "99%",
           margin: "auto",
+
+          "> button:first-of-type":{
+            background: "#0f212e",
+            border: "none",
+            color: "white",
+            borderRadius: "5px",
+            margin: "2px",
+          },
+          "> button:nth-of-type(2) ":{
+            background: "#2f4553",
+            border: "none",
+            color: "white",
+            margin: "2px",
+            "&:hover": {
+              background: "#557086",
+              borderRadius: "5px",
+            },
+          },
         },
-        "> div:second-child":{
+        "> div:second-of-type":{
 
         },
       }
@@ -101,23 +119,6 @@ const styles = {
     fontFamily: "Sans-serif",
     fontSize: "12px",
   }),
-  btnincr: css({
-    background: "#2f4553",
-    border: "none",
-    color: "white",
-    margin: "2px",
-    "&:hover": {
-      background: "#557086",
-      borderRadius: "5px",
-    },
-  }),
-  btnreset: css({
-    background: "#0f212e",
-    border: "none",
-    color: "white",
-    borderRadius: "5px",
-    margin: "2px",
-  }),
 };
 
 interface onWinProps{
@@ -129,6 +130,7 @@ export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
   const resetIncrArray = Array.from({ length: 2 }, (_, index) => index + 1);
   const toggleRestIncrease = (index: number) => {
     setresetIncr(index);
+    console.log(index)
   };
 
   return (
@@ -138,14 +140,16 @@ export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
         <div>
 
           <div>
-            {resetIncrArray.map((button) => (
-              <button
-                css={resetIncr === button ? styles.btnreset : styles.btnincr}
-                onClick={() => toggleRestIncrease(button)}
-              >
-                {button === 1 ? "Reset" : "Increase by:"}
-              </button>
-            ))}
+         
+          {resetIncrArray.map((button) => (
+            resetIncr === button ? (
+              <button key={button}  onClick={() => toggleRestIncrease(button)}>Reset</button>
+            ) : (
+              <button key={button}  onClick={() => toggleRestIncrease(button)}>Increase by:</button>
+            )
+          ))}
+
+            
           </div>
           <div
             css={resetIncr === 2 ? styles.inputwrap : styles.toggleinputwrap}
