@@ -5,34 +5,48 @@ import { useState } from "react";
 const styles = {
   wrap: css({
     display: "block",
-    marginTop: "35px",
+    marginTop: "30px",
     width: "100%",
     height: "42px",
+
+    "> label": {
+      height: "20%",
+      color: "white",
+      fontFamily: "Sans-serif",
+      fontSize: "12px",
+    },
+    "> div":{
+      display: "flex",
+      width: "100%",
+      height: "100%",
+      marginTop: "5px",
+      background: "#2f4553",
+
+      "> div":{
+        margin: "auto",
+        display: "flex",
+        height: "90%",
+        width: "98%",
+
+        "> div:first-child":{
+          display: "flex",
+          width: "52%",
+          height: "99%",
+          margin: "auto",
+        },
+        "> div:second-child":{
+
+        },
+      }
+    }
   }),
-  buttoninput: css({
-    display: "flex",
-    width: "100%",
-    height: "100%",
-    marginTop: "5px",
-    background: "#2f4553",
-  }),
-  container: css({
-    margin: "auto",
-    display: "flex",
-    height: "90%",
-    width: "98%",
-  }),
-  label: css({
-    color: "white",
-    fontFamily: "Sans-serif",
-    fontSize: "12px",
-  }),
-  buttonswrap: css({
-    display: "flex",
-    width: "52%",
-    height: "99%",
-    margin: "auto",
-  }),
+
+
+
+
+
+
+  
   inputwrap: css({
     width: "48%",
     height: "99%",
@@ -110,7 +124,7 @@ interface onWinProps{
   label:string,
 }
 
-export const OnLoss:React.FC<onWinProps> = ({label}) => {
+export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
   const [resetIncr, setresetIncr] = useState(1);
   const resetIncrArray = Array.from({ length: 2 }, (_, index) => index + 1);
   const toggleRestIncrease = (index: number) => {
@@ -119,10 +133,11 @@ export const OnLoss:React.FC<onWinProps> = ({label}) => {
 
   return (
     <div css={styles.wrap}>
-      <span css={styles.label}>{label}</span>
-      <div css={styles.buttoninput}>
-        <div css={styles.container}>
-          <div css={styles.buttonswrap}>
+      <label>{label}</label>
+      <div>
+        <div>
+
+          <div>
             {resetIncrArray.map((button) => (
               <button
                 css={resetIncr === button ? styles.btnreset : styles.btnincr}
@@ -146,6 +161,7 @@ export const OnLoss:React.FC<onWinProps> = ({label}) => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
