@@ -115,17 +115,15 @@ export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
             ))}
           </div>
        <div>
-       {resetIncrArray.map((button) => (
-            <><input
+              <input
               type="number"
-              disabled={resetIncr === button}
+              disabled={resetIncr === 1 ? true : false}
               value={0} />
               <div>
                 <div>
                   <span>%</span>
                 </div>
-              </div></>
-          ))}
+              </div>
         </div>
         </div>
       </div>
