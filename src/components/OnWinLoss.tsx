@@ -28,6 +28,8 @@ const styles = {
         height: "90%",
         width: "98%",
 
+
+
         "> div:first-of-type":{
           display: "flex",
           width: "52%",
@@ -52,11 +54,15 @@ const styles = {
             },
           },
         },
-        "> div:nth-of-type(2)":{
+
+
+
+        "> div:nth-of-type(2)[data-inputState='enabled']":{
             width: "48%",
             height: "99%",
             display: "flex",
             background: "#0f212e",
+            // background: "#213743",
             margin: "auto",
             "> input": {
               width: "85%",
@@ -83,6 +89,41 @@ const styles = {
               }
             },
         },
+
+
+
+        "> div:nth-of-type(2)[data-inputState='disabled']":{
+          width: "48%",
+          height: "99%",
+          display: "flex",
+          background: "#213743",
+          margin: "auto",
+          "> input": {
+            width: "85%",
+            height: "97%",
+            color: "white",
+            background: "transparent",
+            border: "none",
+            borderRadius: "3px",
+            outline: "none",
+            cursor: "no-drop",
+          },
+          "> div":{
+            display: "flex",
+            height: "100%",
+            width: "15%",
+            "> div":{
+              margin: "auto",
+              "> span":{
+                width: "100%",
+                height: "100%",
+                color: "white",
+                fontFamily: "Sans-serif",
+                fontSize: "12px",
+              }
+            }
+          },
+      },
       }
     }
   }),
@@ -93,6 +134,7 @@ const styles = {
 interface onWinProps{
   label:string,
 }
+
 
 export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
   const [resetIncr, setresetIncr] = useState(1);
@@ -109,12 +151,12 @@ export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
         <div>
         <div>
             {resetIncrArray.map((button) => (
-            <button key={button}  onClick={() => toggleRestIncrease(button)}>
+            <button  key={button}  onClick={() => toggleRestIncrease(button)}>
                 {button === 1 ? "Reset" : "Increase by:"}
             </button>         
             ))}
           </div>
-       <div>
+          <div data-inputState={resetIncr === 1 ? "disabled" : "enabled"}>
               <input
               type="number"
               disabled={resetIncr === 1 ? true : false}
@@ -124,7 +166,7 @@ export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
                   <span>%</span>
                 </div>
               </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
