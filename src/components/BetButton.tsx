@@ -13,9 +13,6 @@ const styles = ({
     borderRadius: "5px",
     border: "none",
     cursor:"no-drop"
-    // "&:hover": {
-    //   backgroundColor: "#1fff20",
-    // }
   },
   "> button[data-betbutton='1']": {
     width: "100%",

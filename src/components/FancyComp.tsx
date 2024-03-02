@@ -24,6 +24,9 @@ export const styles = {
         height: "90%",
         width: "98%",
         background: "#0f212e",
+        "&:hover ":{
+          border: "2px solid #557086",
+        },
         "> div": {
           width: "100%",
           height: "100%",
@@ -37,6 +40,7 @@ export const styles = {
             background: "transparent",
             border: "none",
             borderRadius: "3px",
+            outline:"none"
           },
           "> div": {
             display: "flex",

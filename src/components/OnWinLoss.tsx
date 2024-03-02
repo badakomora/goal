@@ -82,8 +82,10 @@ const styles = {
             height: "99%",
             display: "flex",
             background: "#0f212e",
-            // background: "#213743",
             margin: "auto",
+            "&:hover ":{
+              border: "2px solid #557086",
+            },
             "> input": {
               width: "85%",
               height: "97%",

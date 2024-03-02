@@ -6,7 +6,7 @@ const styles = {
   minesinput: css({
     width: "100%",
     height: "40px",
-    marginTop: "9px"
+    marginTop: "9px",
   }),
   input: css({
     width: "100%",
@@ -15,6 +15,9 @@ const styles = {
     background: "#0f212e",
     border: "#2f4553 2px solid",
     marginTop: "4px",
+    "&:hover ":{
+      border: "2px solid #557086",
+    },
     "> option": {
       width: "100%",
       height: "100%",
