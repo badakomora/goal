@@ -6,7 +6,6 @@ import { MinesInput } from "./MinesInput";
 import { BetButton } from "./BetButton";
 import { useState } from "react";
 import { FancyComp } from "./FancyComp";
-// import { OnWin } from "./OnWin";
 import { OnWinLoss } from "./OnWinLoss";
 
 const styles = {
@@ -25,7 +24,7 @@ const styles = {
 };
 export const GameSidebar = () => {
   const [toggleTabClass, setToggleTabClass] = useState(1);
- 
+  const [toggleBetButton, setToggleBetButton] = useState(false)
   
   return (
     <div css={styles.wrap}>
@@ -36,7 +35,14 @@ export const GameSidebar = () => {
       </div>
       {toggleTabClass === 1 ? (
         <div css={styles.manualTab}>
-          <BetButton label={"Bet"} databetbutton={1} />
+          {toggleBetButton === false ? (
+            <BetButton label={"Bet"} databetbutton={1} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
+          ):(
+            <>
+              <FancyComp label={"Total Profit (1.00x)"} icon={"KES"} />
+              <BetButton label={"Cahout"} databetbutton={2} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
+            </>
+          )}
         </div>
       ) : (
         <div className="autoTab">
@@ -45,7 +51,7 @@ export const GameSidebar = () => {
           <OnWinLoss label={"On Loss"} />
           <FancyComp label={"Stop On Profit"}  icon={"KES"} />
           <FancyComp label={"Stop On Loss"} icon={"KES"} />
-          <BetButton label={"Start AutoBet"} databetbutton={2} />
+          <BetButton label={"Start AutoBet"} databetbutton={3} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton}/>
         </div>
       )}
     </div>

@@ -5,7 +5,7 @@ import { useState } from "react";
 const styles = {
   wrap: css({
     display: "block",
-    marginTop: "30px",
+    marginTop: "24px",
     width: "100%",
     height: "42px",
 

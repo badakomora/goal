@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import React from "react";
+import React, { useState } from "react";
 
 const styles = {
   minesinput: css({
@@ -32,11 +32,15 @@ const styles = {
 const MINE_COUNT = Array.from({ length: 24 }, (_, index) => index + 1);
 
 export const MinesInput = () => {
-  
+  const [mine, setMine] = useState(3)
+  const minesFun = (e:React.ChangeEvent<HTMLSelectElement>) =>{
+    const mines = parseInt(e.target.value)
+    setMine(mines)
+  }
   return (
     <div css={styles.minesinput}>
       <span css={styles.label}>Mines</span>
-      <select css={styles.input}>
+      <select css={styles.input} value={mine} onChange={minesFun}>
         {MINE_COUNT.map((count) => (
           <option key={count}>{count}</option>
         ))}

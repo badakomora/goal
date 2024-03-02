@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState } from "react";
 
 const styles = {
   betinput: css({
@@ -31,16 +32,22 @@ const styles = {
     width: "75%",
     height: "100%",
     background: "#0f212e",
+    "&:hover": {
+      border: "2px solid #557086",
+    },
   }),
   buttonswrap: css({
     display: "flex",
-    width: "25%",
+    width: "30%",
     height: "100%",
   }),
   input: css({
     width: "85%",
     border: "none",
     background: "#0f212e",
+    outline:"none",
+    color:"white",
+    fontSize:"15px"
   }),
   iconwrap: css({
     margin: "auto",
@@ -63,7 +70,7 @@ const styles = {
     borderRight: "2px solid #0f212e",
     "&:hover": {
       background: "#557086",
-      borderRadius: "5px",
+      borderRadius: "1px",
     },
   }),
   amountdouble: css({
@@ -75,7 +82,7 @@ const styles = {
     fontFamily: "Sans-serif",
     "&:hover": {
       background: "#557086",
-      borderRadius: "5px",
+      borderRadius: "1px",
     },
   }),
   container: css({
@@ -85,6 +92,13 @@ const styles = {
 };
 
 export const BetInput = () => {
+
+  const [betamountValue, setBetamountValue] = useState(0)
+  const betinputFun = (e:React.ChangeEvent<HTMLInputElement>) => {
+      const betamount = parseInt(e.target.value)
+      setBetamountValue(betamount)
+  }
+
   const amountTabs = Array.from({ length: 2 }, (_, index) => index + 1);
   return (
     <div css={styles.container}>
@@ -95,7 +109,7 @@ export const BetInput = () => {
       <div css={styles.betinput}>
         <div css={styles.wrap}>
           <div css={styles.inputwrap}>
-            <input css={styles.input} type="number" />
+            <input css={styles.input} value={betamountValue} onChange={betinputFun} type="number" />
             <div css={styles.iconwrap}>
               <span css={styles.icon}>KES</span>
             </div>

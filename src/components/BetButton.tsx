@@ -6,15 +6,16 @@ const styles = ({
   width: "100%",
   height: "45px",
   marginTop: "35px",
-  "> button[data-betbutton='2']": {
+  "> button[data-betbutton='2'],[data-betbutton='3']": {
     width: "100%",
     height: "100%",
     background: '#00b801',
     borderRadius: "5px",
     border: "none",
-    "&:hover": {
-      backgroundColor: "#1fff20",
-    }
+    cursor:"no-drop"
+    // "&:hover": {
+    //   backgroundColor: "#1fff20",
+    // }
   },
   "> button[data-betbutton='1']": {
     width: "100%",
@@ -22,6 +23,7 @@ const styles = ({
     background: '#00e701',
     borderRadius: "5px",
     border: "none",
+    cursor:"pointer",
     "&:hover": {
       backgroundColor: "#1fff20",
     }
@@ -32,13 +34,21 @@ const styles = ({
 
 interface betButtonProps{
   label:string,
-  databetbutton:number
+  databetbutton:number,
+  togglebetButton:boolean,
+  setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const BetButton:React.FC<betButtonProps> = ({label, databetbutton}) => {
+export const BetButton:React.FC<betButtonProps> = ({label, databetbutton, setToggleBetButton}) => {
+
+  const betFun = () =>{
+    if(databetbutton === 1){
+      setToggleBetButton(true)
+    }
+  }
   return (
     <div css={styles.wrap}>
-      <button data-betbutton={databetbutton}>{label}</button>
+      <button data-betbutton={databetbutton} onClick={betFun}>{label}</button>
     </div>
   );
 };
