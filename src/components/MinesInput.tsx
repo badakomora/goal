@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import React from "react";
 
 const styles = {
   minesinput: css({
@@ -31,12 +32,13 @@ const styles = {
 const MINE_COUNT = Array.from({ length: 24 }, (_, index) => index + 1);
 
 export const MinesInput = () => {
+  
   return (
     <div css={styles.minesinput}>
       <span css={styles.label}>Mines</span>
       <select css={styles.input}>
         {MINE_COUNT.map((count) => (
-          <option key={count} value="">{count}</option>
+          <option key={count}>{count}</option>
         ))}
       </select>
     </div>

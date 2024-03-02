@@ -15,7 +15,7 @@ const styles = {
     height: "100%",
     width: "100%",
     // background:"white",
-    background: "#0f212e",
+    // background: "#0f212e",
   }),
   amountlabel: css({
     display: "flex",
@@ -61,6 +61,10 @@ const styles = {
     border: "none",
     fontFamily: "Sans-serif",
     borderRight: "2px solid #0f212e",
+    "&:hover": {
+      background: "#557086",
+      borderRadius: "5px",
+    },
   }),
   amountdouble: css({
     background: "#2f4553",
@@ -69,6 +73,10 @@ const styles = {
     color: "white",
     border: "none",
     fontFamily: "Sans-serif",
+    "&:hover": {
+      background: "#557086",
+      borderRadius: "5px",
+    },
   }),
   container: css({
     display: "block",

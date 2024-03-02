@@ -53,6 +53,26 @@ const styles = {
               borderRadius: "5px",
             },
           },
+
+
+          "> button:first-of-type[data-buttomState='enabled']":{
+            background: "#2f4553",
+            border: "none",
+            color: "white",
+            borderRadius: "5px",
+            margin: "2px",
+            "&:hover": {
+              background: "#557086",
+              borderRadius: "5px",
+            },
+          },
+          "> button:nth-of-type(2)[data-buttomState='enabled']":{
+            background: "#0f212e",
+            borderRadius: "5px",
+            border: "none",
+            color: "white",
+            margin: "2px",
+          },
         },
 
 
@@ -151,7 +171,7 @@ export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
         <div>
         <div>
             {resetIncrArray.map((button) => (
-            <button  key={button}  onClick={() => toggleRestIncrease(button)}>
+            <button data-buttomState={resetIncr === 1 ? "disabled" : "enabled"}  key={button}  onClick={() => toggleRestIncrease(button)}>
                 {button === 1 ? "Reset" : "Increase by:"}
             </button>         
             ))}
