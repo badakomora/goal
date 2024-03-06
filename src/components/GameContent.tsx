@@ -33,18 +33,24 @@ const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
 export const GameContent = () => {
   const [showMineGem,  setShowMineGem] = useState(false)
-  const minesGem = () =>{
+  const [clickedTile, setClickedTile] = useState(1);
+  const minesGem = (tile: number) =>{
     setShowMineGem(true)
+    setClickedTile(tile);
   }
   return (
     <div css={styles.wrap}>
-      <div>
+        <div>
         {TILES.map((tile) => (
-           <>
+          <>
             {showMineGem === true ? (
-              <button key={tile}>&diams;</button>
-            ):(
-              <button key={tile} onClick={minesGem}></button>
+              tile === clickedTile ? (
+                <button key={tile}>&diams;</button>
+              ) : (
+                <button key={tile}></button>
+              )
+            ) : (
+              <button key={tile} onClick={() => minesGem(tile)}></button>
             )}
           </>
         ))}
