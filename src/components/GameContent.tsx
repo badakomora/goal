@@ -47,7 +47,7 @@ export const GameContent = () => {
               tile === clickedTile ? (
                 <button key={tile}>&diams;</button>
               ) : (
-                <button key={tile}></button>
+                <button key={tile} onClick={() => minesGem(tile)}></button>
               )
             ) : (
               <button key={tile} onClick={() => minesGem(tile)}></button>
