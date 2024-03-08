@@ -33,10 +33,10 @@ const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
 export const GameContent = () => {
   const [showMineGem,  setShowMineGem] = useState(false)
-  const [clickedTile, setClickedTile] = useState(1);
+  const [clickedTile, setClickedTile] = useState<Number[]>([]);
   const minesGem = (tile: number) =>{
     setShowMineGem(true)
-    setClickedTile(tile);
+    setClickedTile((prevTiles) => [...prevTiles, tile]);
   }
   return (
     <div css={styles.wrap}>
