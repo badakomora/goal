@@ -31,28 +31,21 @@ const styles = {
 
 const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
+
 export const GameContent = () => {
-  const [showMineGem,  setShowMineGem] = useState(false)
-  const [clickedTile, setClickedTile] = useState<Number[]>([]);
-  const minesGem = (tile: number) =>{
-    setShowMineGem(true)
-    setClickedTile((prevTiles) => [...prevTiles, tile]);
+  const [showMineGem,  setShowMineGem] = useState(Array(25).fill(false));
+  const minesGem = (tile: number) => {
+    const updatedShowMineGem = [...showMineGem];
+    updatedShowMineGem[tile - 1] = true;
+    setShowMineGem(updatedShowMineGem);
   }
   return (
     <div css={styles.wrap}>
-        <div>
+      <div>
         {TILES.map((tile) => (
-          <>
-            {showMineGem === true ? (
-              tile === clickedTile ? (
-                <button key={tile}>&diams;</button>
-              ) : (
-                <button key={tile} onClick={() => minesGem(tile)}></button>
-              )
-            ) : (
-              <button key={tile} onClick={() => minesGem(tile)}></button>
-            )}
-          </>
+          <button key={tile} onClick={() => minesGem(tile)}>
+            {showMineGem[tile - 1] ? '♦️' : ''}
+          </button>
         ))}
       </div>
     </div>

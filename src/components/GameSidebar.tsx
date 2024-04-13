@@ -21,6 +21,10 @@ const styles = {
   autoTab: css({
     display: "none",
   }),
+  flex: css({
+    display:"flex",
+    width:"100%"
+  })
 };
 export const GameSidebar = () => {
   const [toggleTabClass, setToggleTabClass] = useState(1);
@@ -31,7 +35,13 @@ export const GameSidebar = () => {
       <div css={styles.manualTab}>
         <SidebarTabs tab={toggleTabClass} setTab={setToggleTabClass} />
         <BetInput />
-        <MinesInput />
+        <div css={toggleBetButton === true ? styles.flex : styles.manualTab}>
+          <MinesInput />
+          <div css={toggleBetButton === true ? styles.flex : styles.autoTab}>
+            <MinesInput />
+          </div>
+        </div>
+       
       </div>
       {toggleTabClass === 1 ? (
         <div css={styles.manualTab}>
