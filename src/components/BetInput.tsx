@@ -96,7 +96,15 @@ export const BetInput = () => {
   const [betamountValue, setBetamountValue] = useState(0)
   const betinputFun = (e:React.ChangeEvent<HTMLInputElement>) => {
       const betamount = parseInt(e.target.value)
+     if(!isNaN(betamount)){
       setBetamountValue(betamount)
+      }else{
+        setBetamountValue(0)
+      }
+  }
+
+  const incDecFun = () =>{
+    
   }
 
   const amountTabs = Array.from({ length: 2 }, (_, index) => index + 1);
@@ -104,7 +112,7 @@ export const BetInput = () => {
     <div css={styles.container}>
       <div css={styles.amountlabel}>
         <span>Bet Amount</span>
-        <span>KES0.00</span>
+        <span>KES{betamountValue}</span>
       </div>
       <div css={styles.betinput}>
         <div css={styles.wrap}>
@@ -119,6 +127,7 @@ export const BetInput = () => {
               <button
                 key={amountTab}
                 css={amountTab === 1 ? styles.amounthalf : styles.amountdouble}
+                onClick={incDecFun}
               >
                 {amountTab === 1 ? "\u00BD" : "2x"}
               </button>
