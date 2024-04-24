@@ -14,9 +14,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     height: "100%",
-    width: "100%",
-    // background:"white",
-    // background: "#0f212e",
+    width: "100%"
   }),
   amountlabel: css({
     display: "flex",

@@ -1,10 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { ChangeEvent } from "react";
 
 const styles = {
   minesinput: css({
-    width: "100%",
-    height: "40px",
+    width: "95%",
+    height: "35px",
     marginTop: "9px",
   }),
   input: css({
@@ -17,11 +18,12 @@ const styles = {
     "&:hover ":{
       border: "2px solid #557086",
     },
-    "> option": {
+    "> input": {
       width: "100%",
       height: "100%",
       color: "white",
-      backgroundColor: "#0f212e"
+      backgroundColor: "#0f212e",
+      outline:"none"
     }
   }),
   label: css({
@@ -31,27 +33,23 @@ const styles = {
   })
 };
 
-const MINE_COUNT = Array.from({ length: 24 }, (_, index) => index + 1);
-
-interface MineProps{
-  mine:number,
-  setMine:React.Dispatch<React.SetStateAction<number>>
+interface gemProps{
+    gem:number,
+    setGem:React.Dispatch<React.SetStateAction<number>>
 }
 
-export const MinesInput:React.FC<MineProps>  = ({mine, setMine}) => {
- 
-  const minesFun = (e:React.ChangeEvent<HTMLSelectElement>) =>{
+export const Gems:React.FC<gemProps> = ({gem, setGem}) => {
+
+ const GemFun = (e: ChangeEvent<HTMLInputElement>) => {
     const mines = parseInt(e.target.value)
-    setMine(mines)
-  }
+    setGem(mines)
+ }
+
   return (
     <div css={styles.minesinput}>
-      <span css={styles.label}>Mines</span>
-      <select css={styles.input} value={mine} onChange={minesFun}>
-        {MINE_COUNT.map((count) => (
-          <option key={count}>{count}</option>
-        ))}
-      </select>
+      <span css={styles.label}>Gems</span>
+      <input css={styles.input} value={gem} onChange={GemFun} />
     </div>
   );
 };
+

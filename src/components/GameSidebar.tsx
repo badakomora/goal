@@ -4,9 +4,10 @@ import { SidebarTabs } from "./SidebarTabs";
 import { BetInput } from "./BetInput";
 import { MinesInput } from "./MinesInput";
 import { BetButton } from "./BetButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FancyComp } from "./FancyComp";
 import { OnWinLoss } from "./OnWinLoss";
+import { Gems } from "./Gems";
 
 const styles = {
   wrap: css({
@@ -29,6 +30,15 @@ const styles = {
 export const GameSidebar = () => {
   const [toggleTabClass, setToggleTabClass] = useState(1);
   const [toggleBetButton, setToggleBetButton] = useState(false)
+  const [mine, setMine] = useState(3)
+  const [gem, setGem] = useState(0)
+
+  useEffect(()=>{
+    const stones = 25;
+    const newGem = stones - mine
+    setGem(newGem)
+  }, [mine])
+
   
   return (
     <div css={styles.wrap}>
@@ -36,9 +46,9 @@ export const GameSidebar = () => {
         <SidebarTabs tab={toggleTabClass} setTab={setToggleTabClass} />
         <BetInput />
         <div css={toggleBetButton === true ? styles.flex : styles.manualTab}>
-          <MinesInput />
+          <MinesInput mine={mine} setMine={setMine} />
           <div css={toggleBetButton === true ? styles.flex : styles.autoTab}>
-            <MinesInput />
+            <Gems gem={gem} setGem={setGem} />
           </div>
         </div>
        
