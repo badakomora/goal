@@ -35,10 +35,11 @@ const MINE_COUNT = Array.from({ length: 24 }, (_, index) => index + 1);
 
 interface MineProps{
   mine:number,
-  setMine:React.Dispatch<React.SetStateAction<number>>
+  setMine:React.Dispatch<React.SetStateAction<number>>,
+  toggleBetButton:boolean
 }
 
-export const MinesInput:React.FC<MineProps>  = ({mine, setMine}) => {
+export const MinesInput:React.FC<MineProps>  = ({mine, setMine, toggleBetButton}) => {
  
   const minesFun = (e:React.ChangeEvent<HTMLSelectElement>) =>{
     const mines = parseInt(e.target.value)
@@ -47,7 +48,7 @@ export const MinesInput:React.FC<MineProps>  = ({mine, setMine}) => {
   return (
     <div css={styles.minesinput}>
       <span css={styles.label}>Mines</span>
-      <select css={styles.input} value={mine} onChange={minesFun}>
+      <select css={styles.input} value={mine} disabled={toggleBetButton}  onChange={minesFun}>
         {MINE_COUNT.map((count) => (
           <option key={count}>{count}</option>
         ))}

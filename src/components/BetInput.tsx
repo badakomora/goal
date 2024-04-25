@@ -89,7 +89,12 @@ const styles = {
   }),
 };
 
-export const BetInput = () => {
+interface betInputProps{
+  toggleBetButton:boolean
+}
+
+
+export const BetInput:React.FC<betInputProps> = ({toggleBetButton}) => {
 
   const [betamountValue, setBetamountValue] = useState(0)
   const betinputFun = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -115,7 +120,7 @@ export const BetInput = () => {
       <div css={styles.betinput}>
         <div css={styles.wrap}>
           <div css={styles.inputwrap}>
-            <input css={styles.input} value={betamountValue} onChange={betinputFun} type="number" />
+            <input css={styles.input} value={betamountValue} disabled={toggleBetButton} onChange={betinputFun} type="number" />
             <div css={styles.iconwrap}>
               <span css={styles.icon}>KES</span>
             </div>

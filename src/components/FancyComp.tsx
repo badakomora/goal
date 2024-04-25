@@ -66,15 +66,16 @@ export const styles = {
 interface betsNumberProps {
   label: string;
   icon: string;
+  toggleBetButton:boolean
 }
-export const FancyComp: React.FC<betsNumberProps> = ({ label, icon }) => {
+export const FancyComp: React.FC<betsNumberProps> = ({ label, icon, toggleBetButton }) => {
   return (
     <div css={styles.wrap}>
       <label>{label}</label>
       <div>
         <div>
           <div>
-            <input type="number" value={0} />
+            <input type="number" value={0} disabled={toggleBetButton} />
             <div>
               <div>
                 <span>{icon}</span>

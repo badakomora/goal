@@ -27,6 +27,7 @@ const styles = {
     width:"100%"
   })
 };
+
 export const GameSidebar = () => {
   const [toggleTabClass, setToggleTabClass] = useState(1);
   const [toggleBetButton, setToggleBetButton] = useState(false)
@@ -43,12 +44,12 @@ export const GameSidebar = () => {
   return (
     <div css={styles.wrap}>
       <div css={styles.manualTab}>
-        <SidebarTabs tab={toggleTabClass} setTab={setToggleTabClass} />
-        <BetInput />
+        <SidebarTabs tab={toggleTabClass} setTab={setToggleTabClass} toggleBetButton={toggleBetButton} />
+        <BetInput toggleBetButton={toggleBetButton} />
         <div css={toggleBetButton === true ? styles.flex : styles.manualTab}>
-          <MinesInput mine={mine} setMine={setMine} />
+          <MinesInput mine={mine} setMine={setMine} toggleBetButton={toggleBetButton} />
           <div css={toggleBetButton === true ? styles.flex : styles.autoTab}>
-            <Gems gem={gem} setGem={setGem} />
+            <Gems gem={gem} setGem={setGem} toggleBetButton={toggleBetButton} />
           </div>
         </div>
        
@@ -59,18 +60,18 @@ export const GameSidebar = () => {
             <BetButton label={"Bet"} databetbutton={1} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
           ):(
             <>
-              <FancyComp label={"Total Profit (1.00x)"} icon={"KES"} />
+              <FancyComp label={"Total Profit (1.00x)"} icon={"KES"} toggleBetButton={toggleBetButton} />
               <BetButton label={"Cahout"} databetbutton={2} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
             </>
           )}
         </div>
       ) : (
         <div className="autoTab">
-          <FancyComp label={"Number Of Bets"} icon={"\u221E"} />
+          <FancyComp label={"Number Of Bets"} icon={"\u221E"} toggleBetButton={toggleBetButton} />
           <OnWinLoss label={"On Win"} />
           <OnWinLoss label={"On Loss"} />
-          <FancyComp label={"Stop On Profit"}  icon={"KES"} />
-          <FancyComp label={"Stop On Loss"} icon={"KES"} />
+          <FancyComp label={"Stop On Profit"}  icon={"KES"} toggleBetButton={toggleBetButton} />
+          <FancyComp label={"Stop On Loss"} icon={"KES"}  toggleBetButton={toggleBetButton} />
           <BetButton label={"Start AutoBet"} databetbutton={3} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton}/>
         </div>
       )}

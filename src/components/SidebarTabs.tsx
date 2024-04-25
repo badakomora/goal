@@ -52,8 +52,9 @@ const styles = {
 interface TabProps {
   tab: number;
   setTab: React.Dispatch<React.SetStateAction<number>>;
+  toggleBetButton:boolean
 }
-export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab }) => {
+export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab,toggleBetButton }) => {
   const toggleTabs = (index: number) => {
     setTab(index);
   };
@@ -66,6 +67,7 @@ export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab }) => {
           <button
             key={index}
             css={tab === index ? styles.manualTab : styles.autoTab}
+            disabled={toggleBetButton}
             onClick={() => toggleTabs(index)}
           >
             {index === 1 ? "Manual" : "Auto"}

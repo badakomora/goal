@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ChangeEvent } from "react";
+import { ChangeEvent} from "react";
 
 const styles = {
   minesinput: css({
@@ -35,10 +35,11 @@ const styles = {
 
 interface gemProps{
     gem:number,
-    setGem:React.Dispatch<React.SetStateAction<number>>
+    setGem:React.Dispatch<React.SetStateAction<number>>,
+    toggleBetButton:boolean,
 }
 
-export const Gems:React.FC<gemProps> = ({gem, setGem}) => {
+export const Gems:React.FC<gemProps> = ({gem, setGem, toggleBetButton}) => {
 
  const GemFun = (e: ChangeEvent<HTMLInputElement>) => {
     const mines = parseInt(e.target.value)
@@ -48,7 +49,7 @@ export const Gems:React.FC<gemProps> = ({gem, setGem}) => {
   return (
     <div css={styles.minesinput}>
       <span css={styles.label}>Gems</span>
-      <input css={styles.input} value={gem} onChange={GemFun} />
+      <input css={styles.input} value={gem} disabled={toggleBetButton} onChange={GemFun} />
     </div>
   );
 };
