@@ -64,7 +64,7 @@ export const Game = () =>{
                     <GameSidebar gem={gem} setGem={setGem} mine={mine} setMine={setMine} />
                 </div>
                 <div>
-                    <GameContent gem={gem} mine={mine} />
+                    <GameContent />
                 </div>
             </div>
             <div className="bottomWrap">
