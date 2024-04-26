@@ -36,7 +36,7 @@ export const GameContent = () => {
   const [showMineGem,  setShowMineGem] = useState(Array(25).fill(false));
   const minesGem = (tile: number) => {
     const updatedShowMineGem = [...showMineGem];
-    updatedShowMineGem[tile - 1] = true;
+    updatedShowMineGem[tile - 6] = true;
     setShowMineGem(updatedShowMineGem);
   }
   return (
@@ -44,7 +44,7 @@ export const GameContent = () => {
       <div>
         {TILES.map((tile) => (
           <button key={tile} onClick={() => minesGem(tile)}>
-            {showMineGem[tile - 1] ? '♦️' : ''}
+            {showMineGem[tile - 6] ? '♦️' : ''}
           </button>
         ))}
       </div>

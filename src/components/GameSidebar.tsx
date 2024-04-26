@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useEffect, useState } from "react";
 import { SidebarTabs } from "./SidebarTabs";
 import { BetInput } from "./BetInput";
 import { MinesInput } from "./MinesInput";
 import { BetButton } from "./BetButton";
-import { useEffect, useState } from "react";
 import { FancyComp } from "./FancyComp";
 import { OnWinLoss } from "./OnWinLoss";
 import { Gems } from "./Gems";
+import { RandomPick } from "./RandomPick";
 
 const styles = {
   wrap: css({
@@ -61,6 +62,7 @@ export const GameSidebar = () => {
           ):(
             <>
               <FancyComp label={"Total Profit (1.00x)"} icon={"KES"} toggleBetButton={toggleBetButton} />
+              <RandomPick />
               <BetButton label={"Cahout"} databetbutton={2} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
             </>
           )}

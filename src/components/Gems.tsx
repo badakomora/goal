@@ -3,34 +3,27 @@ import { css } from "@emotion/react";
 import { ChangeEvent} from "react";
 
 const styles = {
-  minesinput: css({
+  gems: css({
     width: "95%",
     height: "35px",
-    marginTop: "9px",
-  }),
-  input: css({
-    width: "100%",
-    height: "100%",
-    color: "white",
-    background: "#0f212e",
-    border: "#2f4553 2px solid",
-    marginTop: "4px",
-    "&:hover ":{
-      border: "2px solid #557086",
-    },
+    marginTop: "10px",
+    "> label": {
+        color: "white",
+        fontFamily: "Sans-serif",
+        fontSize: "12px"
+      },
     "> input": {
       width: "100%",
       height: "100%",
       color: "white",
       backgroundColor: "#0f212e",
-      outline:"none"
-    }
+      border:"none",
+      marginTop: "4px",
+      "&:hover ":{
+        border: "2px solid #557086",
+      }
+    }     
   }),
-  label: css({
-    color: "white",
-    fontFamily: "Sans-serif",
-    fontSize: "12px"
-  })
 };
 
 interface gemProps{
@@ -47,9 +40,9 @@ export const Gems:React.FC<gemProps> = ({gem, setGem, toggleBetButton}) => {
  }
 
   return (
-    <div css={styles.minesinput}>
-      <span css={styles.label}>Gems</span>
-      <input css={styles.input} value={gem} disabled={toggleBetButton} onChange={GemFun} />
+    <div css={styles.gems}>
+      <label>Gems</label>
+      <input value={gem} disabled={toggleBetButton} onChange={GemFun} />
     </div>
   );
 };
