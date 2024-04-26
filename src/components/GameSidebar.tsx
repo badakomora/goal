@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SidebarTabs } from "./SidebarTabs";
 import { BetInput } from "./BetInput";
 import { MinesInput } from "./MinesInput";
@@ -29,21 +29,24 @@ const styles = {
   })
 };
 
-export const GameSidebar = () => {
+
+interface gamesidebarProps{
+  gem:number,
+  setGem:React.Dispatch<React.SetStateAction<number>>,
+  mine:number,
+  setMine:React.Dispatch<React.SetStateAction<number>>
+}
+
+export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMine}) => {
+
   const [toggleTabClass, setToggleTabClass] = useState(1);
   const [toggleBetButton, setToggleBetButton] = useState(false)
-  const [mine, setMine] = useState(3)
-  const [gem, setGem] = useState(0)
 
-  useEffect(()=>{
-    const stones = 25;
-    const newGem = stones - mine
-    setGem(newGem)
-  }, [mine])
 
   
   return (
     <div css={styles.wrap}>
+
       <div css={styles.manualTab}>
         <SidebarTabs tab={toggleTabClass} setTab={setToggleTabClass} toggleBetButton={toggleBetButton} />
         <BetInput toggleBetButton={toggleBetButton} />
@@ -53,8 +56,8 @@ export const GameSidebar = () => {
             <Gems gem={gem} setGem={setGem} toggleBetButton={toggleBetButton} />
           </div>
         </div>
-       
       </div>
+
       {toggleTabClass === 1 ? (
         <div css={styles.manualTab}>
           {toggleBetButton === false ? (
@@ -77,6 +80,7 @@ export const GameSidebar = () => {
           <BetButton label={"Start AutoBet"} databetbutton={3} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton}/>
         </div>
       )}
+      
     </div>
   );
 };

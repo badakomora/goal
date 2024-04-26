@@ -12,7 +12,6 @@ const styles = ({
     background: '#00b801',
     borderRadius: "5px",
     border: "none",
-    // cursor:"no-drop"
   },
   "> button[data-betbutton='2']":{
     marginTop: "18px",
@@ -21,7 +20,6 @@ const styles = ({
     background: '#00b801',
     borderRadius: "5px",
     border: "none",
-    // cursor:"no-drop"
   },
   "> button[data-betbutton='1']": {
     marginTop: "40px",

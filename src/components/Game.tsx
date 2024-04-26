@@ -2,51 +2,74 @@
 import { css } from "@emotion/react"
 import { GameSidebar } from "./GameSidebar"
 import { GameContent } from "./GameContent"
+import { useEffect, useState } from "react"
 
 const styles = {
-    container:css({
+    wrap:css({
         display:"flex",
         justifyContent:"center",
+            "> div":{
+                backgroundColor:"#0f212e",
+                width:"1000px",
+                height:"680px",
+
+                "> div:nth-of-type(1)":{
+                    display:"flex",
+                    justifyContent:"space-between",
+                    width:"100%",
+                    height:"100%",
+
+                    "> div:nth-of-type(1)":{
+                        backgroundColor:"#213743",
+                        width:"30%",
+                        display:"flex",
+                        justifyContent:"center"
+                    },
+
+                    "> div:nth-of-type(2)":{
+                        backgroundColor:"#0f212e",
+                        width:"70%",
+                        display:"flex",
+                        justifyContent:"center"
+                    }
+                },
+
+                
+                "> div:nth-of-type(2)":{
+
+                }
+            }
     }),
-    gameWrap:css({
-        backgroundColor:"#0f212e",
-        width:"1000px",
-        height:"680px",
-    }),
-    sidesWrap:css({
-        display:"flex",
-        justifyContent:"space-between",
-        width:"100%",
-        height:"100%",
-    }),
-    leftsidewrap:css({
-        backgroundColor:"#213743",
-        width:"30%",
-        display:"flex",
-        justifyContent:"center"
-    }),
-    rightsidewrap:css({
-        backgroundColor:"#0f212e",
-        width:"70%",
-        display:"flex",
-        justifyContent:"center"
-    })
+  
 
 }
 export const Game = () =>{
+
+
+    const [mine, setMine] = useState(3)
+    const [gem, setGem] = useState(0)
+  
+    useEffect(()=>{
+      const stones = 25;
+      const newGem = stones - mine
+      setGem(newGem)
+    }, [mine])
+
+
+    
  return(
-    <div css={styles.container}>
-        <div css={styles.gameWrap}>
-            <div css={styles.sidesWrap}>
-                <div css={styles.leftsidewrap}>
-                    <GameSidebar />
+    <div css={styles.wrap}>
+        <div>
+            <div>
+                <div>
+                    <GameSidebar gem={0} setGem={setGem} mine={mine} setMine={setMine} />
                 </div>
-                <div css={styles.rightsidewrap}>
-                    <GameContent />
+                <div>
+                    <GameContent gem={gem} mine={mine} />
                 </div>
             </div>
             <div className="bottomWrap">
-
+              {/* to be continued... */}
             </div>
         </div>
     </div>

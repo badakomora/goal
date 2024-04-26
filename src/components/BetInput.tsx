@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import { useState } from "react";
 
 const styles = {
-  container: css({
+  wrap: css({
     display: "block",
     marginTop: "10px",
 
@@ -125,7 +125,7 @@ export const BetInput:React.FC<betInputProps> = ({toggleBetButton}) => {
 
   const amountTabs = Array.from({ length: 2 }, (_, index) => index + 1);
   return (
-    <div css={styles.container}>
+    <div css={styles.wrap}>
       <div>
         <label>Bet Amount</label>
         <span>KES{betamountValue}</span>
