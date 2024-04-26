@@ -35,11 +35,10 @@ interface gamecontentProps{
   mine:number
 }
 
-
 const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
-
 export const GameContent:React.FC<gamecontentProps> = ({gem, mine}) => {
+
 
   const [showMineGem,  setShowMineGem] = useState(Array(25).fill(false));
   const minesGem = (tile: number) => {
@@ -47,11 +46,15 @@ export const GameContent:React.FC<gamecontentProps> = ({gem, mine}) => {
     updatedShowMineGem[tile - 1] = true;
     setShowMineGem(updatedShowMineGem);
   }
+
   return (
     <div css={styles.wrap}>
       <div>
         {TILES.map((tile) => (
-          <button key={tile} onClick={() => minesGem(tile)}>
+          <button 
+          key={tile} 
+          onClick={() => minesGem(tile)}
+          >
             {showMineGem[tile - 1] ? '♦️' : ''}
           </button>
         ))}

@@ -36,7 +36,7 @@ const styles = {
 
                 
                 "> div:nth-of-type(2)":{
-
+                    //to be continued
                 }
             }
     }),
@@ -45,15 +45,14 @@ const styles = {
 }
 export const Game = () =>{
 
-
     const [mine, setMine] = useState(3)
     const [gem, setGem] = useState(0)
   
-    useEffect(()=>{
+    useEffect(() => {
       const stones = 25;
       const newGem = stones - mine
       setGem(newGem)
-    }, [mine])
+    },[mine])
 
 
     
@@ -62,7 +61,7 @@ export const Game = () =>{
         <div>
             <div>
                 <div>
-                    <GameSidebar gem={0} setGem={setGem} mine={mine} setMine={setMine} />
+                    <GameSidebar gem={gem} setGem={setGem} mine={mine} setMine={setMine} />
                 </div>
                 <div>
                     <GameContent gem={gem} mine={mine} />
@@ -74,4 +73,5 @@ export const Game = () =>{
         </div>
     </div>
  )
+
 }
