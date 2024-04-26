@@ -30,14 +30,11 @@ const styles = {
 };
 
 
-interface gamecontentProps{
-  gem:number,
-  mine:number
-}
+
 
 const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
-export const GameContent:React.FC<gamecontentProps> = ({gem, mine}) => {
+export const GameContent = () => {
 
 
   const [showMineGem,  setShowMineGem] = useState(Array(25).fill(false));
