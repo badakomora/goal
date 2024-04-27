@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState } from "react";
 const styles = {
   wrap: css({
     width: "95%",
@@ -30,29 +29,21 @@ const styles = {
 };
 
 
-
+//Apa ndo sina clue at all, haha
 
 const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
 export const GameContent = () => {
 
 
-  const [showMineGem,  setShowMineGem] = useState(Array(25).fill(false));
-  const minesGem = (tile: number) => {
-    const updatedShowMineGem = [...showMineGem];
-    updatedShowMineGem[tile - 1] = true;
-    setShowMineGem(updatedShowMineGem);
-  }
-
   return (
     <div css={styles.wrap}>
       <div>
         {TILES.map((tile) => (
           <button 
-          key={tile} 
-          onClick={() => minesGem(tile)}
+          key={tile}
           >
-            {showMineGem[tile - 1] ? '♦️' : ''}
+          
           </button>
         ))}
       </div>

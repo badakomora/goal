@@ -47,6 +47,16 @@ const styles = {
       fontFamily: "Sans-serif",
     },
   }),
+  newautotab:css({
+    width: "47%",
+    borderRadius: "4.5rem",
+    background: "transparent",
+    border: "none",
+    margin: "auto",
+    color: "white",
+    fontSize: "12px",
+    fontFamily: "Sans-serif",
+  })
 };
 
 interface TabProps {
@@ -66,7 +76,12 @@ export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab,toggleBetButton })
         {tabs.map((index) => (
           <button
             key={index}
-            css={tab === index ? styles.manualTab : styles.autoTab}
+            css={
+              toggleBetButton === false ? (tab === index ? styles.manualTab : styles.autoTab) :
+              toggleBetButton === true ? (tab === index ? styles.manualTab : styles.newautotab) :
+              ""
+            }
+            
             disabled={toggleBetButton}
             onClick={() => toggleTabs(index)}
           >
