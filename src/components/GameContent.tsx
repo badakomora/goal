@@ -30,7 +30,6 @@ const styles = {
 };
 
 
-//Apa ndo sina clue at all, haha
 
 interface MinesGems{
   gem:number,
@@ -44,9 +43,7 @@ const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 export const GameContent:React.FC<MinesGems> = ({gem, mine}) => {
 
   const [minegem, setMineGem] = useState(false)
-  const MINES = Array.from({ length: mine }, (_, index) => index + 1);
-  // const GEMS = Array.from({ length: gem }, (_, index) => index + 1);
-
+  
   const showMineGemFun =() =>{
       setMineGem(true)
   }
@@ -56,7 +53,7 @@ export const GameContent:React.FC<MinesGems> = ({gem, mine}) => {
       <div>
         {TILES.map((tile, index) => (
           <button key={tile} onClick={showMineGemFun}>
-            {minegem ? index < MINES.length ? <span>&#128163;</span> : <span>&#128142;</span> : ""}
+            {minegem ? index < mine ? <span>&#128163;</span> : <span>&#128142;</span> : ""}
           </button>
         ))}
       </div>
