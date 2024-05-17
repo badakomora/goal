@@ -31,19 +31,25 @@ const styles = {
 
 //Apa ndo sina clue at all, haha
 
+interface MinesGems{
+  gem:number,
+  mine:number,
+}
+
+
+
 const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
-export const GameContent = () => {
+export const GameContent:React.FC<MinesGems> = ({gem, mine}) => {
 
-
+  const MINES = Array.from({ length: mine }, (_, index) => index + 1);
+  // const GEMS = Array.from({ length: gem }, (_, index) => index + 1);
   return (
     <div css={styles.wrap}>
       <div>
-        {TILES.map((tile) => (
-          <button 
-          key={tile}
-          >
-          
+        {TILES.map((tile, index) => (
+          <button key={tile}>
+            {index < MINES.length ? <span>&#128142;</span> : <span>&#128163;</span>}
           </button>
         ))}
       </div>
