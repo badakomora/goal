@@ -49,7 +49,7 @@ export const GameContent:React.FC<MinesGems> = ({gem, mine}) => {
       <div>
         {TILES.map((tile, index) => (
           <button key={tile}>
-            {index < MINES.length ? <span>&#128142;</span> : <span>&#128163;</span>}
+            {index < MINES.length ? <span>&#128163;</span> : <span>&#128142;</span>}
           </button>
         ))}
       </div>
