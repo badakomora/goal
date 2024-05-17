@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState } from "react";
 const styles = {
   wrap: css({
     width: "95%",
@@ -42,14 +43,20 @@ const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
 export const GameContent:React.FC<MinesGems> = ({gem, mine}) => {
 
+  const [minegem, setMineGem] = useState(false)
   const MINES = Array.from({ length: mine }, (_, index) => index + 1);
   // const GEMS = Array.from({ length: gem }, (_, index) => index + 1);
+
+  const showMineGemFun =() =>{
+      setMineGem(true)
+  }
+
   return (
     <div css={styles.wrap}>
       <div>
         {TILES.map((tile, index) => (
-          <button key={tile}>
-            {index < MINES.length ? <span>&#128163;</span> : <span>&#128142;</span>}
+          <button key={tile} onClick={showMineGemFun}>
+            {minegem ? index < MINES.length ? <span>&#128163;</span> : <span>&#128142;</span> : ""}
           </button>
         ))}
       </div>
