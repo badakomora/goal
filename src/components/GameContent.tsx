@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const styles = {
   wrap: css({
     width: "95%",
@@ -34,36 +34,50 @@ const styles = {
   }),
 };
 
-
-
 interface MinesGems{
   gem:number,
   mine:number,
   toggleBetButton:boolean
 }
 
-
-
 const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
 
-export const GameContent:React.FC<MinesGems> = ({gem, mine, toggleBetButton}) => {
-
-  const [minegem, setMineGem] = useState(Array(TILES.length).fill(false));
-  
-  const showMineGemFun =(index:number) =>{
-      setMineGem(prevState => {
-        const newState = [...prevState];
-        newState[index] = true;
-        return newState;
-      })
+const shuffleArray = (array: any[]) => {
+  const newArray = array.slice();
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
   }
+  return newArray;
+};
+
+export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton }) => {
+  
+  const [minegem, setMineGem] = useState(Array(TILES.length).fill(false));
+  const [shuffledTiles, setShuffledTiles] = useState<number[]>([]);
+
+  useEffect(() => {
+    const minesArray = Array(mine).fill(mine);
+    const gemsArray = Array(gem).fill(gem);
+    const combinedArray = [...minesArray, ...gemsArray];
+    const shuffled = shuffleArray(combinedArray);
+    setShuffledTiles(shuffled);
+  }, [gem, mine]);
+
+  const showMineGemFun = (index: number) => {
+    setMineGem(prevState => {
+      const newState = [...prevState];
+      newState[index] = true;
+      return newState;
+    });
+  };
 
   return (
     <div css={styles.wrap}>
       <div>
-        {TILES.map((tile, index) => (
-          <button key={tile} disabled={!toggleBetButton} onClick={() =>showMineGemFun(index)}>
-            {minegem[index] ? index < mine ? <span>&#128163;</span> : <span>&#128142;</span> : ""}
+        {TILES.map((index) => (
+          <button key={index} disabled={!toggleBetButton} onClick={() => showMineGemFun(index)}>
+            {minegem[index] ? shuffledTiles[index] === mine ? <span>&#128163;</span> : <span>&#128142;</span>:""}
           </button>
         ))}
       </div>
