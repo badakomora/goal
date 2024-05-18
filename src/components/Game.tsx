@@ -40,10 +40,13 @@ const styles = {
                 }
             }
     }),
-  
-
 }
+
+
 export const Game = () =>{
+
+    const [toggleTabClass, setToggleTabClass] = useState(1);
+    const [toggleBetButton, setToggleBetButton] = useState(false)
 
     const [mine, setMine] = useState(3)
     const [gem, setGem] = useState(0)
@@ -61,10 +64,10 @@ export const Game = () =>{
         <div>
             <div>
                 <div>
-                    <GameSidebar gem={gem} setGem={setGem} mine={mine} setMine={setMine} />
+                    <GameSidebar gem={gem} setGem={setGem} mine={mine} setMine={setMine} toggleTabClass={toggleTabClass} setToggleTabClass={setToggleTabClass } toggleBetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
                 </div>
                 <div>
-                    <GameContent gem={gem} mine={mine} />
+                    <GameContent gem={gem} mine={mine} toggleBetButton={toggleBetButton} />
                 </div>
             </div>
             <div className="bottomWrap">

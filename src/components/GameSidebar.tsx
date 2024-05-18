@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useState } from "react";
 import { SidebarTabs } from "./SidebarTabs";
 import { BetInput } from "./BetInput";
 import { MinesInput } from "./MinesInput";
@@ -35,12 +34,15 @@ interface gamesidebarProps{
   setGem:React.Dispatch<React.SetStateAction<number>>,
   mine:number,
   setMine:React.Dispatch<React.SetStateAction<number>>
+  toggleTabClass:number,
+  setToggleTabClass:React.Dispatch<React.SetStateAction<number>>,
+  toggleBetButton:boolean,
+  setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMine}) => {
+export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMine, toggleBetButton, setToggleBetButton, toggleTabClass, setToggleTabClass}) => {
 
-  const [toggleTabClass, setToggleTabClass] = useState(1);
-  const [toggleBetButton, setToggleBetButton] = useState(false)
+  
 
 
   
