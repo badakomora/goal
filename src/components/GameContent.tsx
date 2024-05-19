@@ -37,7 +37,8 @@ const styles = {
 interface MinesGems{
   gem:number,
   mine:number,
-  toggleBetButton:boolean
+  toggleBetButton:boolean,
+  setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
@@ -51,7 +52,7 @@ const shuffleArray = (array: any[]) => {
   return newArray;
 };
 
-export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton }) => {
+export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton, setToggleBetButton }) => {
   
   const [minegem, setMineGem] = useState(Array(TILES.length).fill(false));
   const [shuffledTiles, setShuffledTiles] = useState<number[]>([]);
@@ -74,6 +75,7 @@ export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton })
     if(shuffledTiles[index] === gem){
       console.log("win")
     }else{
+      setToggleBetButton(false)
       console.log("loss")
     }
   };

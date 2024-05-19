@@ -2,7 +2,7 @@
 import { css } from "@emotion/react"
 import { GameSidebar } from "./GameSidebar"
 import { GameContent } from "./GameContent"
-import { useEffect, useState } from "react"
+import { SetStateAction, useEffect, useState } from "react"
 
 const styles = {
     wrap:css({
@@ -67,7 +67,7 @@ export const Game = () =>{
                     <GameSidebar gem={gem} setGem={setGem} mine={mine} setMine={setMine} toggleTabClass={toggleTabClass} setToggleTabClass={setToggleTabClass } toggleBetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
                 </div>
                 <div>
-                    <GameContent gem={gem} mine={mine} toggleBetButton={toggleBetButton} />
+                    <GameContent gem={gem} mine={mine} toggleBetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
                 </div>
             </div>
             <div className="bottomWrap">
