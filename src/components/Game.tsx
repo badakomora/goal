@@ -2,7 +2,7 @@
 import { css } from "@emotion/react"
 import { GameSidebar } from "./GameSidebar"
 import { GameContent } from "./GameContent"
-import { SetStateAction, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 const styles = {
     wrap:css({
