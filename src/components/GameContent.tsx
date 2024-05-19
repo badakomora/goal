@@ -70,7 +70,14 @@ export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton })
       newState[index] = true;
       return newState;
     });
+
+    if(shuffledTiles[index] === gem){
+      console.log("win")
+    }else{
+      console.log("loss")
+    }
   };
+
 
   return (
     <div css={styles.wrap}>
