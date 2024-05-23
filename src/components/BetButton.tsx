@@ -46,6 +46,8 @@ interface betButtonProps{
 
 export const BetButton:React.FC<betButtonProps> = ({label, databetbutton, setToggleBetButton}) => {
 
+ 
+
   const betFun = () => {
     if(databetbutton === 1){
       setToggleBetButton(true)

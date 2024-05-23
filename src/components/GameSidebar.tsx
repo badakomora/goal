@@ -37,7 +37,7 @@ interface gamesidebarProps{
   toggleTabClass:number,
   setToggleTabClass:React.Dispatch<React.SetStateAction<number>>,
   toggleBetButton:boolean,
-  setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>
+  setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMine, toggleBetButton, setToggleBetButton, toggleTabClass, setToggleTabClass}) => {
@@ -79,7 +79,7 @@ export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMi
           <OnWinLoss label={"On Loss"} />
           <FancyComp label={"Stop On Profit"}  icon={"KES"} toggleBetButton={toggleBetButton} />
           <FancyComp label={"Stop On Loss"} icon={"KES"}  toggleBetButton={toggleBetButton} />
-          <BetButton label={"Start AutoBet"} databetbutton={3} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton}/>
+          <BetButton label={"Start AutoBet"} databetbutton={3} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
         </div>
       )}
       
