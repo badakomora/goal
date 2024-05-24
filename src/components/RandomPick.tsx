@@ -23,9 +23,13 @@ const styles = ({
 
 export const RandomPick = () => {
 
+  const randomPick = () => {
+      
+  }
+
   return (
     <div css={styles.wrap}>
-      <button>Pick Random Tile</button>
+      <button onClick={randomPick}>Pick Random Tile</button>
     </div>
   );
 };
