@@ -30,17 +30,25 @@ const styles = {
 
 
 interface gamesidebarProps{
-  gem:number,
-  setGem:React.Dispatch<React.SetStateAction<number>>,
-  mine:number,
-  setMine:React.Dispatch<React.SetStateAction<number>>
-  toggleTabClass:number,
-  setToggleTabClass:React.Dispatch<React.SetStateAction<number>>,
-  toggleBetButton:boolean,
-  setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>,
+  gem: number;
+  setGem: React.Dispatch<React.SetStateAction<number>>;
+  mine: number;
+  setMine: React.Dispatch<React.SetStateAction<number>>;
+  toggleTabClass: number;
+  setToggleTabClass: React.Dispatch<React.SetStateAction<number>>;
+  toggleBetButton: boolean;
+  setToggleBetButton: React.Dispatch<React.SetStateAction<boolean>>;
+  gameOver:boolean,
+  setGameOver: React.Dispatch<React.SetStateAction<boolean>>;
+  minegem:boolean[],
+  setMineGem:React.Dispatch<React.SetStateAction<boolean[]>>,
+  shuffledTiles:number[],
+  setShuffledTiles:React.Dispatch<React.SetStateAction<number[]>>,
+  clickedButtons:boolean[],
+  setClickedButtons: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 
-export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMine, toggleBetButton, setToggleBetButton, toggleTabClass, setToggleTabClass}) => {
+export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMine, toggleBetButton, setToggleBetButton, toggleTabClass, setToggleTabClass, gameOver, setGameOver, minegem, setMineGem, clickedButtons, shuffledTiles,  setClickedButtons, setShuffledTiles}) => {
 
   
 
@@ -50,7 +58,7 @@ export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMi
     <div css={styles.wrap}>
 
       <div css={styles.manualTab}>
-        <SidebarTabs tab={toggleTabClass} setTab={setToggleTabClass} toggleBetButton={toggleBetButton} />
+        <SidebarTabs tab={toggleTabClass} setTab={setToggleTabClass} toggleBetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} setGameOver={setGameOver} setMineGem={setMineGem} />
         <BetInput toggleBetButton={toggleBetButton} />
         <div css={toggleBetButton === true ? styles.flex : styles.manualTab}>
           <MinesInput mine={mine} setMine={setMine} toggleBetButton={toggleBetButton} />
@@ -67,7 +75,7 @@ export const GameSidebar:React.FC<gamesidebarProps> = ({gem, mine, setGem, setMi
           ):(
             <>
               <FancyComp label={"Total Profit (1.00x)"} icon={"KES"} toggleBetButton={toggleBetButton} />
-              <RandomPick />
+              <RandomPick setGameOver={setGameOver} toggleBetButton={false} setToggleBetButton={setToggleBetButton} minegem={minegem} setMineGem={setMineGem} shuffledTiles={shuffledTiles} setShuffledTiles={setShuffledTiles} clickedButtons={clickedButtons} setClickedButtons={setClickedButtons} gameOver={gameOver} />
               <BetButton label={"Cahout"} databetbutton={2} togglebetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
             </>
           )}

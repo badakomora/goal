@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useEffect, useState } from "react";
-import { FaGem, FaBomb } from 'react-icons/fa';
+import { useEffect } from "react";
+import { FaRegGem , FaBomb } from 'react-icons/fa';
+import{ Tiles } from './Tiles'
 const styles = {
   wrap: css({
     width: "95%",
@@ -22,15 +23,11 @@ const styles = {
         height: "109.78px",
         boxShadow: "0 3px 2px rgba(0,0,0,.1)",
         margin:"auto",
-        "> span[data-clicked=mine]":{
-          margin:"auto",
+        "> span[data-clicked=true]":{
           fontSize:"80px",
-          // color: "red",
         },
-        "> span[data-clicked=gem]":{
-          margin:"auto",
-          fontSize:"80px",
-          // color: "#00e701",
+        "> span[data-clicked=false]":{
+          fontSize:"45px",
         },
         "&:hover": {
           transition: "background 0.4s ease-in-out",
@@ -46,9 +43,18 @@ interface MinesGems {
   mine: number;
   toggleBetButton: boolean;
   setToggleBetButton: React.Dispatch<React.SetStateAction<boolean>>;
+  gameOver:boolean,
+  setGameOver:React.Dispatch<React.SetStateAction<boolean>>;
+  minegem:boolean[],
+  setMineGem:React.Dispatch<React.SetStateAction<boolean[]>>,
+  shuffledTiles:number[],
+  setShuffledTiles:React.Dispatch<React.SetStateAction<number[]>>,
+  clickedButtons:boolean[],
+  setClickedButtons: React.Dispatch<React.SetStateAction<boolean[]>>;
+
 }
 
-const TILES = Array.from({ length: 25 }, (_, index) => index + 1);
+
 
 const shuffleArray = (array: any[]) => {
   const newArray = array.slice();
@@ -59,12 +65,9 @@ const shuffleArray = (array: any[]) => {
   return newArray;
 };
 
-export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton, setToggleBetButton }) => {
-  
-  const [minegem, setMineGem] = useState<boolean[]>(Array(TILES.length).fill(false));
-  const [shuffledTiles, setShuffledTiles] = useState<number[]>([]);
-  const [gameOver, setGameOver] = useState<boolean>(false);
-  const [clickedButtons, setClickedButtons] = useState<boolean[]>(Array(TILES.length).fill(false));
+export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton, setToggleBetButton, setGameOver, gameOver, setMineGem, minegem, shuffledTiles, clickedButtons, setShuffledTiles, setClickedButtons }) => {
+
+  const TILES = Tiles()
 
   useEffect(() => {
     if (toggleBetButton) {
@@ -75,7 +78,7 @@ export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton, s
       const shuffled = shuffleArray(combinedArray);
       setShuffledTiles(shuffled);
     }
-  }, [gem, mine, toggleBetButton]);
+  }, [TILES.length, gem, mine, setClickedButtons, setGameOver, setMineGem, setShuffledTiles, toggleBetButton]);
 
   const showMineGemFun = (index: number) => {
     setMineGem(prevState => {
@@ -100,18 +103,18 @@ export const GameContent: React.FC<MinesGems> = ({ gem, mine, toggleBetButton, s
   return (
     <div css={styles.wrap}>
       <div>
-        {TILES.map((tileIndex) => (
+        {TILES.map((tileIndex:number) => (
           <button
             key={tileIndex}
-            disabled={gameOver && !clickedButtons[tileIndex - 1]} // Disable all buttons if game over except clicked ones
+            disabled={gameOver && !clickedButtons[tileIndex - 1]} 
             onClick={() => showMineGemFun(tileIndex - 1)}
           >
             {
               minegem[tileIndex - 1] ? (
                 shuffledTiles[tileIndex - 1] === 1 ? (
-                  <span data-clicked="mine"><FaBomb /></span>
+                  <span data-clicked={clickedButtons[tileIndex - 1]}><FaBomb /></span>
                 ) : shuffledTiles[tileIndex - 1] === 2 ? (
-                  <span data-clicked="gem"><FaGem /></span>
+                  <span data-clicked={clickedButtons[tileIndex - 1]}><FaRegGem /></span>
                 ) : ""
               ) : ""
             }

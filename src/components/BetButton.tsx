@@ -41,7 +41,7 @@ interface betButtonProps{
   label:string,
   databetbutton:number,
   togglebetButton:boolean,
-  setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>
+  setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 export const BetButton:React.FC<betButtonProps> = ({label, databetbutton, setToggleBetButton}) => {
@@ -51,6 +51,7 @@ export const BetButton:React.FC<betButtonProps> = ({label, databetbutton, setTog
   const betFun = () => {
     if(databetbutton === 1){
       setToggleBetButton(true)
+     
     }
   }
   

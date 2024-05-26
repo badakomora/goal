@@ -3,6 +3,7 @@ import { css } from "@emotion/react"
 import { GameSidebar } from "./GameSidebar"
 import { GameContent } from "./GameContent"
 import { useEffect, useState } from "react"
+import { Tiles } from "./Tiles"
 
 const styles = {
     wrap:css({
@@ -44,9 +45,13 @@ const styles = {
 
 
 export const Game = () =>{
-
+    const TILES = Tiles()
+    const [minegem, setMineGem] = useState<boolean[]>(Array(TILES.length).fill(false));
     const [toggleTabClass, setToggleTabClass] = useState(1);
-    const [toggleBetButton, setToggleBetButton] = useState(false)
+    const [toggleBetButton, setToggleBetButton] = useState<boolean>(false)
+    const [gameOver, setGameOver] = useState<boolean>(false);
+    const [shuffledTiles, setShuffledTiles] = useState<number[]>([]);
+    const [clickedButtons, setClickedButtons] = useState<boolean[]>(Array(TILES.length).fill(false));
 
     const [mine, setMine] = useState(3)
     const [gem, setGem] = useState(0)
@@ -64,10 +69,10 @@ export const Game = () =>{
         <div>
             <div>
                 <div>
-                    <GameSidebar gem={gem} setGem={setGem} mine={mine} setMine={setMine} toggleTabClass={toggleTabClass} setToggleTabClass={setToggleTabClass} toggleBetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
+                    <GameSidebar gem={gem} setGem={setGem} mine={mine} setMine={setMine} toggleTabClass={toggleTabClass} setToggleTabClass={setToggleTabClass} toggleBetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} setGameOver={setGameOver} setMineGem={setMineGem} minegem={minegem} shuffledTiles={shuffledTiles} setShuffledTiles={setShuffledTiles} clickedButtons={clickedButtons} setClickedButtons={setClickedButtons} gameOver={gameOver}  />
                 </div>
                 <div>
-                    <GameContent gem={gem} mine={mine} toggleBetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} />
+                    <GameContent gem={gem} mine={mine} toggleBetButton={toggleBetButton} setToggleBetButton={setToggleBetButton} gameOver={gameOver} setGameOver={setGameOver} minegem={minegem} setMineGem={setMineGem} shuffledTiles={shuffledTiles} setShuffledTiles={setShuffledTiles} clickedButtons={clickedButtons} setClickedButtons={setClickedButtons } />
                 </div>
             </div>
             <div className="bottomWrap">
