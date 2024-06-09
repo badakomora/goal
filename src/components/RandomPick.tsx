@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useEffect } from "react";
-import { Tiles } from "./Tiles";
+import { TILES } from "./Tiles";
 
 const styles = ({
   wrap: css({
@@ -50,7 +50,7 @@ interface gameOverState{
 }
 
 export const RandomPick:React.FC<gameOverState> = ({gameOver, setGameOver, setMineGem, setToggleBetButton, setClickedButtons, shuffledTiles, setShuffledTiles}) => {
-  const TILES = Tiles()
+
   
   useEffect(() => {
     if (gameOver) {

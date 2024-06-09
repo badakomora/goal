@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { MinesGems } from "../types";
+import { TILES } from "./Tiles";
 
 const styles = ({
   wrap: css({
@@ -44,14 +46,16 @@ interface betButtonProps{
   setToggleBetButton:React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export const BetButton:React.FC<betButtonProps> = ({label, databetbutton, setToggleBetButton}) => {
+export const BetButton:React.FC<betButtonProps & MinesGems> = ({label, databetbutton, setToggleBetButton, setMineGem, setGameOver, setClickedButtons}) => {
 
  
 
   const betFun = () => {
     if(databetbutton === 1){
       setToggleBetButton(true)
-     
+      setMineGem(Array(TILES.length).fill(false));
+      setGameOver(false);
+      setClickedButtons(Array(TILES.length).fill(false));
     }
   }
   

@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState } from "react";
 export const styles = {
   wrap: css({
     display: "block",
@@ -69,13 +70,19 @@ interface betsNumberProps {
   toggleBetButton:boolean
 }
 export const FancyComp: React.FC<betsNumberProps> = ({ label, icon, toggleBetButton }) => {
+  
+  const [value, setValue] = useState(0)
+  const fancyinputFun = (e:React.ChangeEvent<HTMLInputElement>) =>{
+    const currentValue = parseInt(e.target.value)
+    setValue(currentValue) 
+  }
   return (
     <div css={styles.wrap}>
       <label>{label}</label>
       <div>
         <div>
           <div>
-            <input type="number" value={0} disabled={toggleBetButton} />
+            <input type="number" value={value} onChange={fancyinputFun} disabled={toggleBetButton} />
             <div>
               <div>
                 <span>{icon}</span>

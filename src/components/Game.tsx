@@ -3,7 +3,7 @@ import { css } from "@emotion/react"
 import { GameSidebar } from "./GameSidebar"
 import { GameContent } from "./GameContent"
 import { useEffect, useState } from "react"
-import { Tiles } from "./Tiles"
+import { TILES } from "./Tiles"
 
 const styles = {
     wrap:css({
@@ -45,7 +45,6 @@ const styles = {
 
 
 export const Game = () =>{
-    const TILES = Tiles()
     const [minegem, setMineGem] = useState<boolean[]>(Array(TILES.length).fill(false));
     const [toggleTabClass, setToggleTabClass] = useState(1);
     const [toggleBetButton, setToggleBetButton] = useState<boolean>(false)

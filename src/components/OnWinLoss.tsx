@@ -55,7 +55,7 @@ const styles = {
           },
 
 
-          "> button:first-of-type[data-buttomState='enabled']":{
+          "> button:first-of-type[data-buttomstate='enabled']":{
             background: "#2f4553",
             border: "none",
             color: "white",
@@ -66,7 +66,7 @@ const styles = {
               borderRadius: "5px",
             },
           },
-          "> button:nth-of-type(2)[data-buttomState='enabled']":{
+          "> button:nth-of-type(2)[data-buttomstate='enabled']":{
             background: "#0f212e",
             borderRadius: "5px",
             border: "none",
@@ -77,7 +77,7 @@ const styles = {
 
 
 
-        "> div:nth-of-type(2)[data-inputState='enabled']":{
+        "> div:nth-of-type(2)[data-inputstate='enabled']":{
             width: "48%",
             height: "99%",
             display: "flex",
@@ -114,7 +114,7 @@ const styles = {
 
 
 
-        "> div:nth-of-type(2)[data-inputState='disabled']":{
+        "> div:nth-of-type(2)[data-inputstate='disabled']":{
           width: "48%",
           height: "99%",
           display: "flex",
@@ -173,12 +173,12 @@ export const OnWinLoss:React.FC<onWinProps> = ({label}) => {
         <div>
         <div>
             {resetIncrArray.map((button) => (
-            <button data-buttomState={resetIncr === 1 ? "disabled" : "enabled"}  key={button}  onClick={() => toggleRestIncrease(button)}>
+            <button data-buttomstate={resetIncr === 1 ? "disabled" : "enabled"}  key={button}  onClick={() => toggleRestIncrease(button)}>
                 {button === 1 ? "Reset" : "Increase by:"}
             </button>         
             ))}
           </div>
-          <div data-inputState={resetIncr === 1 ? "disabled" : "enabled"}>
+          <div data-inputstate={resetIncr === 1 ? "disabled" : "enabled"}>
               <input
               type="number"
               disabled={resetIncr === 1 ? true : false}

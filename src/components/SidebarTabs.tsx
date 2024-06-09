@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React from "react";
-import { Tiles } from "./Tiles";
+import { TILES } from "./Tiles";
 
 const styles = {
   wrap: css({
@@ -15,7 +15,7 @@ const styles = {
       display: "flex",
       justifyContent: "center",
       borderRadius: "3rem",
-      "> button[data-manualAutoTabs=manual]": {
+      "> button[data-manualautotabs=manual]": {
         width: "47%",
         height: "40px",
         background: "#2f4553",
@@ -72,7 +72,6 @@ interface TabProps {
 }
 
 export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab, toggleBetButton, setMineGem, }) => {
-  const TILES = Tiles()
   const toggleTabs = (index: number) => {
     setTab(index);
     setMineGem(Array(TILES.length).fill(false));
@@ -87,7 +86,7 @@ export const SidebarTabs: React.FC<TabProps> = ({ tab, setTab, toggleBetButton, 
         {tabs.map((index) => (
           <button
             key={index}
-            data-manualAutoTabs={
+            data-manualautotabs={
               toggleBetButton === false
                 ? tab === index
                   ? "manual"
